@@ -1,0 +1,65 @@
+plugins {
+  id 'java'
+  id 'org.jetbrains.kotlin.jvm' version '1.8.21'
+  id 'io.qameta.allure' version '2.9.3'
+}
+
+group 'com.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+  mavenCentral()
+}
+
+ext {
+  allureVersion = '2.22.0'
+  junitVersion = '5.9.3'
+}
+
+sourceCompatibility = '17'
+targetCompatibility = '17'
+
+tasks.withType(JavaCompile) {
+  options.encoding = 'UTF-8'
+}
+
+[compileKotlin, compileTestKotlin].forEach {
+  it.kotlinOptions {
+        jvmTarget = '17'
+  }
+}
+
+dependencies {
+  testImplementation('com.codeborne:selenide:6.19.0')
+  testImplementation("io.qameta.allure:allure-selenide:${allureVersion}")
+  testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
+  testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+}
+
+tasks.register('cleanTest', Delete) {
+  delete file("build/reports")
+  delete file("build/allure-results")
+}
+
+test {
+  useJUnitPlatform()
+  ignoreFailures = true
+  dependsOn(cleanTest)
+}
+
+allure {
+//  autoconfigure = true
+  version = "${allureVersion}"
+
+useJUnit5 {
+    version = "${allureVersion}"
+  }}
+
+allureReport {
+  dependsOn(cleanTest, test)
+}
+
+
+
+
+
