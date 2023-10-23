@@ -4,9 +4,14 @@ import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.Selenide.webdriver
 import com.codeborne.selenide.logevents.SelenideLogger
 import io.qameta.allure.selenide.AllureSelenide
+import io.restassured.RestAssured
+import io.restassured.http.ContentType
+import io.restassured.specification.RequestSpecification
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeAll
-
+import org.openqa.selenium.Keys
+import org.openqa.selenium.interactions.Actions
+import java.io.File
 
 abstract class TestBase {
 
@@ -31,4 +36,5 @@ abstract class TestBase {
     fun teardown() {
         webdriver().driver().close()
     }
+
 }

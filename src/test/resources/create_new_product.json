@@ -1,0 +1,138 @@
+{
+  "allowedNumbersOfPacksInBlock": 10,
+  "blockGtin": "04629308877044",
+  "blocksInBox": 20,
+  "boxGtin": "14629308870004",
+  "boxInPallets": 31,
+  "comment": "//комментарии",
+  "countryCode": "RU",
+  "factoryId": "344",
+  "id": "84733425",
+  "mrp": 15000,
+  "numberOfCigarettesInPack": 20,
+  "packGtin": "04629308877037",
+  "packsInBlock": 10,
+  "productAttributeList": [
+    {
+      "name": "lsku",
+      "value": "084733425"
+    },
+    {
+      "name": "blockInstructionArea03Line01",
+      "value": ""
+    },
+    {
+      "name": "blockInstructionArea03Line02",
+      "value": ""
+    },
+    {
+      "name": "blockInstructionArea03Line04",
+      "value": ""
+    },
+    {
+      "name": "blockInstructionArea03Line05",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionArea03Line01",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionArea03Line02",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionArea03Line03",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionArea03Line04",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionArea03Line05",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionArea03Line06",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionLabel01Area01Line01",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionLabel01Area01Line02",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionLabel02Area01Line01",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionLabel02Area01Line02",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionUserDefinedField09",
+      "value": ""
+    },
+    {
+      "name": "caseInstructionUserDefinedField10",
+      "value": ""
+    }
+  ],
+  "productFullName": "autoProd",
+  "productServiceName": "RU, Fi27",
+  "productionMode": "31",
+  "source": "MANUAL",
+  "templateBindingsList": [
+    {
+      "bitmapList": [],
+      "name": "itobacco-renue-crpt-videojet.xml",
+      "packageType": "PACK",
+      "templateType": "packInstructionTemplateName",
+      "version": null
+    },
+    {
+      "bitmapList": [
+        {
+          "bitmapType": "blockInstructionImageName",
+          "name": "iTobacco_34_34.bmp",
+          "version": null
+        }
+      ],
+      "name": "iTobacco_Renue100x150.eti",
+      "packageType": "BLOCK",
+      "templateType": "blockInstructionTemplateName",
+      "version": null
+    },
+    {
+      "bitmapList": [
+        {
+          "bitmapType": "caseInstructionImageName01",
+          "name": "iTobacco_34_34.bmp",
+          "version": null
+        }
+      ],
+      "name": "iTobacco_Renue100x150.eti",
+      "packageType": "BOX",
+      "templateType": "caseInstructionTemplateName01",
+      "version": null
+    },
+    {
+      "bitmapList": [
+        {
+          "bitmapType": "caseInstructionImageName02",
+          "name": "iTobacco_34_34.bmp",
+          "version": null
+        }
+      ],
+      "name": "iTobacco_Renue100x150.eti",
+      "packageType": "BOX",
+      "templateType": "caseInstructionTemplateName02",
+      "version": null
+    }
+  ],
+  "variables": []
+}
