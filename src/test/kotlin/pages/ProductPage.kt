@@ -4,6 +4,7 @@ import com.codeborne.selenide.ElementsCollection
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.element
 import com.codeborne.selenide.Selenide.elements
+import com.codeborne.selenide.SelenideElement
 import org.openqa.selenium.By.xpath
 
 class ProductPage {
@@ -15,9 +16,11 @@ class ProductPage {
     fun productList() = elements("tbody tr").`as`("Список продукции")
     fun searchField() = element(xpath("//label/following-sibling::div/input")).`as`("Поле 'Поиск'")
     fun saveButton() = element("button[type='submit']").`as`("[Сохранить]")
+    fun sidebar() = element("form").`as`("Сайдбар")
+    fun cancelButton() = element(xpath("//button[text()='Отменить']")).`as`("[Отменить]")
     fun deleteOptionButton() = element("form button > svg > path").`as`("[Удалить параметр]")
     fun addOptionButton() = element(xpath("//button[text()='Добавить параметр']")).`as`("[+ Добавить параметр]")
-    fun templateOptionsTab() = element(xpath("//div[text()='Параметры шаблона']")).`as`("Таб [Параметры шаблона]")
+    fun optionsTemplateTab() = element(xpath("//div[text()='Параметры шаблона']")).`as`("Таб [Параметры шаблона]")
     fun testVariablesList() = elements("input").`as`("Поля ввода для тестовых переменных")
     fun packTemplateField() = element("[name='printing.packInstructionTemplateName']").`as`("Поле 'Пачка -> Шаблон'")
     fun firstStickerBoxTemplateField() = element("[name='printing.caseInstructionTemplateName01']").`as`("Поле 'Первый стикер короба -> Шаблон'")
@@ -26,7 +29,7 @@ class ProductPage {
     fun secondStickerBoxImageField() = element("[name='printing.caseInstructionImageName02']").`as`("Поле 'Второй стикер короба -> Изображение'")
     fun stickerBlockTemplateField() = element("[name='printing.blockInstructionTemplateName']").`as`("Поле 'Стикер блока -> Шаблон'")
     fun stickerBlockImageField() = element("[name='printing.blockInstructionImageName']").`as`("Поле 'Стикер блока -> Изображение'")
-    fun printTemplateTab() = element(xpath("//div[text()='Шаблоны печати']")).`as`("Таб [Шаблоны печати]")
+    fun templatePrintTab() = element(xpath("//div[text()='Шаблоны печати']")).`as`("Таб [Шаблоны печати]")
     fun textVariablesTab() = element(xpath("//div[text()='Текстовые переменные']")).`as`("Таб [Текстовые переменные]")
     fun aggregation(cigarettesInPack: String, packsInBlock: String, boxInPallet: String, validPacksInBlock: String, blocksInBox: String) {
         element("[name='main.numberOfCigarettesInPack']").`as`("Количество сигарет в пачке").setValue(cigarettesInPack)
@@ -35,19 +38,19 @@ class ProductPage {
         element("[name='main.allowedNumbersOfPacksInBlock']").`as`("Валидных пачек в блоке").setValue(validPacksInBlock)
         element("[name='main.numberOfBlocksInCase']").`as`("Блоков в коробе").setValue(blocksInBox)
     }
-    fun GTINs(pack: String, block: String, box: String) {
-        element("[name='main.gtinPack']").`as`("Поле 'GTIN пачки'").setValue(pack)
-        element("[name='main.gtinBlock']").`as`("Поле 'GTIN блока'").setValue(block)
-        element("[name='main.gtinCase']").`as`("Поле 'GTIN короба'").setValue(box)
-    }
+    fun packGTIN() = element("[name='main.gtinPack']").`as`("Поле 'GTIN пачки'")
+    fun blockGTIN() = element("[name='main.gtinBlock']").`as`("Поле 'GTIN блока'")
+    fun boxGTIN() = element("[name='main.gtinCase']").`as`("Поле 'GTIN короба'")
     fun productionModeSelector(): ElementsCollection {
         element("div[id='mui-component-select-main.productionMode']").`as`("Выпадающее меню 'Режим производства'").click()
         return items()
     }
-    fun optionValueSelector(): ElementsCollection {
-        element("div[id='mui-component-select-parameters.0.value']").`as`("Выпадающее меню 'Значение параметра'").click()
+    fun valueOptionSelector(index: Int): ElementsCollection {
+        valueOptionField(index).click()
         return items()
     }
+    fun valueOptionField(index: Int): SelenideElement = element("div[id='mui-component-select-parameters.$index.value']").`as`("Выпадающее меню 'Значение параметра'(значение параметра шаблона пачки)")
+    fun optionTemplateNameField(index: Int) = element("input[name='parameters.$index.variable']").`as`("Поле 'Параметр'(имя переменной шаблона пачки)")
     fun countryCodeSelector(): ElementsCollection {
         element("div[id='mui-component-select-main.countryCode']").`as`("Выпадающее меню 'Код страны'").click()
         return items()

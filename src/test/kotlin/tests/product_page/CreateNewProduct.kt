@@ -9,7 +9,7 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import pages.PRODUCT_PAGE
-import services.PoManager
+import services.PO_MANAGER
 import support.*
 import test_settings.TestBase
 
@@ -42,12 +42,14 @@ class CreateNewProduct : TestBase() {
                 countryCodeSelector().find(text(countryCode)).click()
                 commentField().setValue(comment)
                 productionModeSelector().find(text(productionMode)).click()
-                GTINs(pack = packGTIN, block = blockGTIN, box = boxGTIN)
+                packGTIN().value = packGTIN
+                blockGTIN().value = blockGTIN
+                boxGTIN().value = boxGTIN
                 aggregation("20", "10", "31", "10", "20")
             })
 
             step("Клик по вкладке 'Шаблоны печати' -> Заполнение", ThrowableRunnableVoid {
-                printTemplateTab().click()
+                templatePrintTab().click()
                 packTemplateField().setValue(packTemplate)
                 stickerBlockTemplateField().setValue(template)
                 stickerBlockImageField().setValue(bitmap)
@@ -63,9 +65,9 @@ class CreateNewProduct : TestBase() {
             })
 
             step("Клик по вкладке 'Параметры шаблона' -> Добавление и удаление параметров", ThrowableRunnableVoid{
-                templateOptionsTab().click()
+                optionsTemplateTab().click()
                 addOptionButton().click()
-                optionValueSelector().find(text(optionValue)).click()
+                valueOptionSelector(0).find(text(valueOption_Date_LineCode)).click()
                 repeat(5) {
                     addOptionButton().click()
                 }
@@ -98,7 +100,7 @@ class CreateNewProduct : TestBase() {
 
     @AfterEach
     fun after() {
-        PoManager().deleteProduct(RSKU)
+        PO_MANAGER.deleteProduct(RSKU)
     }
 
 }

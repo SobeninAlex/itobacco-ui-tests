@@ -1,5 +1,8 @@
 package support
 
+import com.codeborne.selenide.SelenideElement
+import org.openqa.selenium.Keys
+
 //возвращает рандомную, латинскую, буквенную строку заданной длины
 fun randomAlphabetic(length: Int): String {
     val charset = ('A'..'Z') + ('a'..'z')
@@ -14,4 +17,11 @@ fun randomNumeric(length: Int): String {
     return (1..length)
         .map { charset.random() }
         .joinToString("")
+}
+
+//расширяем интерфейс SelenideElement -> добавляем новую функцию для редактирования элемента
+fun SelenideElement.editField(newValue: String) {
+    sendKeys(Keys.CONTROL, "A")
+    sendKeys(Keys.DELETE)
+    value = newValue
 }
