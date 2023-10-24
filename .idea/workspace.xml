@@ -4,12 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="add EditNewProduct test">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/services/Services.kt" afterDir="false" />
+    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="finish test edit new product">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ChecksPage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/MainPage.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/Pages.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/Test.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/debug_test_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/debug_test_report.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/AuthorizationPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/AuthorizationPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/OrderPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/OrderPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/Pages.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/ProductPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ProductPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/support/SupportVariables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/support/SupportVariables.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationError.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationSuccess.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationSuccess.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/CreateNewProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/CreateNewProduct.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProduct.kt" afterDir="false" />
     </list>
@@ -43,8 +50,8 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
-        <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -72,7 +79,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "task-2",
-    "last_opened_file_path": "C:/Users/soben/Desktop/itobacco-backend",
+    "last_opened_file_path": "C:/Users/soben/Desktop/QualityAssurance",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -87,21 +94,22 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\kotlin\pages\main_page" />
       <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\kotlin\support" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="pages.main_page" />
       <recent name="tests.authorization_page" />
       <recent name="test_settings.services" />
       <recent name="tests.authorization_page.functional_tests" />
       <recent name="tests.authorization_page_tests" />
-      <recent name="tests.order_page_tests" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.EditNewProduct.editNewProduct">
-    <configuration name="EditNewProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.AuthorizationSuccess.loginSuccess">
+    <configuration name="AuthorizationSuccess.loginSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -114,7 +122,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.product_page.EditNewProduct&quot;" />
+            <option value="&quot;tests.authorization_page.AuthorizationSuccess.loginSuccess&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -125,118 +133,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="EditNewProduct.editNewProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.product_page.EditNewProduct.editNewProduct&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="EditNewProduct.editProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.product_page.EditNewProduct.editProduct&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProductTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.product_page.ProductTest&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="ProductTest.createNewProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;tests.product_page.ProductTest.createNewProduct&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
+    <configuration name="start-all-tests" type="JUnit" factoryName="JUnit">
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="wholeProject" />
+      </option>
+      <envs>
+        <env name="namespase" value="http://itobacco-dev-03.k8s.renue.yc/" />
+      </envs>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
       <item itemvalue="Gradle.debug_test_report" />
       <item itemvalue="Gradle.allTestsRun_generateReport" />
-      <item itemvalue="Gradle.EditNewProduct.editNewProduct" />
-      <item itemvalue="Gradle.EditNewProduct" />
-      <item itemvalue="Gradle.EditNewProduct.editProduct" />
-      <item itemvalue="Gradle.ProductTest" />
-      <item itemvalue="Gradle.ProductTest.createNewProduct" />
+      <item itemvalue="Gradle.AuthorizationSuccess.loginSuccess" />
+      <item itemvalue="JUnit.start-all-tests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.EditNewProduct.editNewProduct" />
-        <item itemvalue="Gradle.EditNewProduct" />
-        <item itemvalue="Gradle.EditNewProduct.editProduct" />
-        <item itemvalue="Gradle.ProductTest.createNewProduct" />
-        <item itemvalue="Gradle.ProductTest" />
+        <item itemvalue="Gradle.AuthorizationSuccess.loginSuccess" />
       </list>
     </recent_temporary>
   </component>
@@ -264,7 +184,9 @@
       <workItem from="1697799814090" duration="11760000" />
       <workItem from="1698037683607" duration="24483000" />
       <workItem from="1698062989363" duration="7549000" />
-      <workItem from="1698128659957" duration="11018000" />
+      <workItem from="1698128659957" duration="11461000" />
+      <workItem from="1698143261841" duration="1576000" />
+      <workItem from="1698145011909" duration="6087000" />
     </task>
     <task id="LOCAL-00001" summary="end">
       <option name="closed" value="true" />
@@ -290,7 +212,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698080563968</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="finish test edit new product">
+      <option name="closed" value="true" />
+      <created>1698141428532</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1698141428532</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -310,6 +240,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="end" />
     <MESSAGE value="add EditNewProduct test" />
-    <option name="LAST_COMMIT_MESSAGE" value="add EditNewProduct test" />
+    <MESSAGE value="finish test edit new product" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish test edit new product" />
   </component>
 </project>

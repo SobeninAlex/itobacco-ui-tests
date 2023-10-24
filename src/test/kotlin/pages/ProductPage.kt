@@ -6,14 +6,14 @@ import com.codeborne.selenide.Selenide.element
 import com.codeborne.selenide.Selenide.elements
 import com.codeborne.selenide.SelenideElement
 import org.openqa.selenium.By.xpath
+import pages.main_page.MainPage
 
-class ProductPage {
+class ProductPage(private val subURL: String) : MainPage() {
 
-    val expectedPageTitle = "Продукция"
-    val expectedSidebarTitle = "Создать продукт"
+    val orderPageTitle = "Продукция"
+    val orderPageSidebarTitle = "Создать продукт"
 
-    private fun items() = elements("li[class]").`as`("Список элементов выпадающего списка")
-    fun productList() = elements("tbody tr").`as`("Список продукции")
+    //TODO перенести общие элементы для всех страниц в MainPage()
     fun searchField() = element(xpath("//label/following-sibling::div/input")).`as`("Поле 'Поиск'")
     fun saveButton() = element("button[type='submit']").`as`("[Сохранить]")
     fun sidebar() = element("form").`as`("Сайдбар")
@@ -67,10 +67,9 @@ class ProductPage {
     fun nameProductField() = element("input[name='nameMain']").`as`("Поле 'Наименование продукта'")
     fun sidebarTitle() = element("form h2").`as`("Заголовок сайдбара")
     fun createButton() = element(xpath("//a[.='Создать']")).`as`("[Создать]")
-    fun pageTitle() = element(xpath("//h1[.='Продукция']")).`as`("Заголовок страницы")
 
     fun openPage() {
-        Selenide.open("dict/products")
+        Selenide.open(subURL)
         Selenide.executeJavaScript<Any>("localStorage.setItem('password', 'admin');")
         Selenide.executeJavaScript<Any>("localStorage.setItem('username', 'admin');")
         Selenide.refresh()

@@ -3,7 +3,7 @@ package pages
 import com.codeborne.selenide.Selenide.element
 import com.codeborne.selenide.Selenide.open
 
-class AuthorizationPage {
+class AuthorizationPage(private val subUrl: String) {
 
     val loginOrPassword = "admin"
 
@@ -13,6 +13,6 @@ class AuthorizationPage {
     fun errorMessage() = element("p.Mui-error").`as`("Сообщение об ошибке")
 
     fun openPage() {
-        open("/")
+        open(subUrl)
     }
 }

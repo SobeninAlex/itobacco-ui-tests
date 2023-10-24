@@ -8,7 +8,7 @@ import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import pages.PRODUCT_PAGE
+import pages.main_page.PRODUCT_PAGE
 import services.PO_MANAGER
 import support.*
 import test_settings.TestBase
@@ -35,15 +35,15 @@ class EditNewProduct : TestBase() {
     @DisplayName("Редактирование новосозданной продукции")
     fun editNewProduct() {
         with(PRODUCT_PAGE) {
-            step("Открытие страницы 'Продукция'", ThrowableRunnableVoid {
+            step("Переход на страницу 'Продукция'", ThrowableRunnableVoid {
                 openPage()
-                pageTitle().shouldBe(visible).shouldHave(text(expectedPageTitle))
+                pageTitle().shouldBe(visible).shouldHave(text(orderPageTitle))
             })
 
-            step("Ищем продукцию по RSKU -> кликаем", ThrowableRunnableVoid {
+            step("Поиск продукцию по RSKU -> клик по найденной продукции", ThrowableRunnableVoid {
                 searchField().setValue(RSKU)
 
-                productList()[0]
+                listItems()[0]
                     .shouldBe(visible)
                     .find("td")
                     .shouldHave(text(RSKU))
@@ -56,25 +56,25 @@ class EditNewProduct : TestBase() {
                 saveButton().shouldBe(disabled)
             })
 
-            step("Редактируем поле 'Наименование (служебное)'", ThrowableRunnableVoid {
+            step("Редактирование поля 'Наименование (служебное)'", ThrowableRunnableVoid {
                 nameServiceField().editField(newValue = serviceName)
             })
 
-            step("Редактируем поле 'МРЦ пачки'", ThrowableRunnableVoid {
+            step("Редактирование поля 'МРЦ пачки'", ThrowableRunnableVoid {
                 mrpField().editField(mrp)
             })
 
-            step("Редактируем поле 'Комментарии'", ThrowableRunnableVoid {
+            step("Редактирование поля 'Комментарии'", ThrowableRunnableVoid {
                 commentField().editField(comment)
             })
 
-            step("Редактируем GTIN-ы", ThrowableRunnableVoid {
+            step("Редактирование GTIN-ов", ThrowableRunnableVoid {
                 packGTIN().editField(packGTIN)
                 blockGTIN().editField(blockGTIN)
                 boxGTIN().editField(boxGTIN)
             })
 
-            step("Переходим к Шаблонам печати -> редактируем шаблоны", ThrowableRunnableVoid {
+            step("Переход к Шаблонам печати -> редактирование шаблонов", ThrowableRunnableVoid {
                 templatePrintTab().click()
 
                 packTemplateField().editField(packTemplate)
@@ -86,7 +86,7 @@ class EditNewProduct : TestBase() {
                 secondStickerBoxImageField().editField(image)
             })
 
-            step("Переходим к Параметрам шаблона -> редактируем", ThrowableRunnableVoid {
+            step("Переход к Параметрам шаблона -> редактирование параметров", ThrowableRunnableVoid {
                 optionsTemplateTab().click()
 
                 repeat(3) {
@@ -103,26 +103,26 @@ class EditNewProduct : TestBase() {
                 valueOptionSelector(2).find(text(valueOption_MRP_Date)).click()
             })
 
-            step("Сохраняем изменения", ThrowableRunnableVoid {
+            step("Клик по [Сохранить]", ThrowableRunnableVoid {
                 saveButton().click()
             })
 
-            step("Проверяем что изменения применились", ThrowableRunnableVoid{
-                val listAtr = productList()[0].findAll("td")
+            step("Проверка: изменения применились", ThrowableRunnableVoid{
+                val listAtr = listItems()[0].findAll("td")
                 listAtr[4].`as`("МРЦ пачки, коп").shouldHave(text("${mrp.toInt() / 100} 00"))
                 listAtr[5].`as`("GTIN пачки").shouldHave(text(packGTIN))
                 listAtr[6].`as`("GTIN блока").shouldHave(text(blockGTIN))
                 listAtr[7].`as`("GTIN короба").shouldHave(text(boxGTIN))
             })
 
-            step("Кликаем на продукцию -> проверяем что атрибуты изменились", ThrowableRunnableVoid {
-                productList()[0].click()
+            step("Клик по продукции -> проверка: атрибуты изменились", ThrowableRunnableVoid {
+                listItems()[0].click()
                 sidebarTitle().shouldBe(visible)
                 nameServiceField().shouldHave(value(serviceName))
                 commentField().shouldHave(value(comment))
             })
 
-            step("Переходим к шаблонам печати -> проверяем что шаблоны и изображения изменились", ThrowableRunnableVoid {
+            step("Переход к шаблонам печати -> проверка: шаблоны и изображения изменились", ThrowableRunnableVoid {
                 templatePrintTab().click()
                 packTemplateField().shouldHave(value(packTemplate))
                 stickerBlockTemplateField().shouldHave(value(template))
@@ -133,7 +133,7 @@ class EditNewProduct : TestBase() {
                 secondStickerBoxImageField().shouldHave(value(image))
             })
 
-            step("Переходим к параметрам шаблона -> проверяем что переменные добавились", ThrowableRunnableVoid {
+            step("Переход к параметрам шаблона -> проверка: переменные добавились", ThrowableRunnableVoid {
                 optionsTemplateTab().click()
 
                 optionTemplateNameField(0).shouldHave(value(packVariables_RUSSIA))
@@ -146,7 +146,7 @@ class EditNewProduct : TestBase() {
                 valueOptionField(2).shouldHave(text(valueOption_MRP_Date))
             })
 
-            step("Проверяем что [Сохранить] задизейблена -> кликаем отмена -> проверяем что сайдбар закрылся", ThrowableRunnableVoid {
+            step("Проверка: [Сохранить] задизейблена -> клик по [Отмена] -> проверка: сайдбар закрылся", ThrowableRunnableVoid {
                 saveButton().shouldBe(disabled)
                 cancelButton().click()
                 sidebar().shouldNotBe(visible)

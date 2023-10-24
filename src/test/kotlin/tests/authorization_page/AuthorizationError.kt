@@ -4,10 +4,9 @@ import com.codeborne.selenide.Condition
 import io.qameta.allure.Allure
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Epic
-import io.qameta.allure.Story
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import pages.AUTHORIZATION_PAGE
+import pages.main_page.AUTHORIZATION_PAGE
 import test_settings.TestBase
 
 @Epic("Тесты на авторизацию в системе iTobacco")
@@ -18,24 +17,24 @@ class AuthorizationError : TestBase() {
     @DisplayName("Ошибка авторизации")
     fun loginError() {
         with(AUTHORIZATION_PAGE) {
-            Allure.step("Открываем страницу авторизации", ThrowableRunnableVoid {
+            Allure.step("Переход на страницу авторизации", ThrowableRunnableVoid {
                 openPage()
             })
 
-            Allure.step("Заполняем форму авторизации не валидными значениями", ThrowableRunnableVoid {
+            Allure.step("Заполнение формы авторизации не валидными значениями", ThrowableRunnableVoid {
                 loginField().value = "$loginOrPassword error"
                 passwordField().value = "$loginOrPassword error"
             })
 
-            Allure.step("Кликаем 'Войти'", ThrowableRunnableVoid {
+            Allure.step("Клик [Войти]", ThrowableRunnableVoid {
                 enterButton().click()
             })
 
-            Allure.step("Проверяем что отобразилось сообщение об ошибке", ThrowableRunnableVoid {
+            Allure.step("Проверка: отобразилось сообщение об ошибке", ThrowableRunnableVoid {
                 errorMessage().shouldBe(Condition.visible)
             })
 
-            Allure.step("Проверяем что поля 'Логин' и 'Пароль' выделены красной рамкой", ThrowableRunnableVoid {
+            Allure.step("Проверка: поля 'Логин' и 'Пароль' выделены красной рамкой", ThrowableRunnableVoid {
                 loginField().shouldHave(Condition.attribute("aria-invalid", "true"))
                 passwordField().shouldHave(Condition.attribute("aria-invalid", "true"))
             })
