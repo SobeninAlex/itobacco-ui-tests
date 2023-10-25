@@ -4,21 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="finish test edit new product">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ChecksPage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/MainPage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/Pages.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/Test.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/debug_test_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/debug_test_report.xml" afterDir="false" />
+    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="add MainPage">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/CheckClickableToggles.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/NameCheck.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/AuthorizationPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/AuthorizationPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/ChecksPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ChecksPage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/OrderPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/OrderPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/Pages.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/ProductPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ProductPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationError.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationSuccess.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationSuccess.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/CreateNewProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/CreateNewProduct.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProduct.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/MainPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/MainPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/test_settings/TestBase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/test_settings/TestBase.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/Test.kt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,8 +104,8 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.AuthorizationSuccess.loginSuccess">
-    <configuration name="AuthorizationSuccess.loginSuccess" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.NameCheck.nameCheck">
+    <configuration name="AuthorizationError.loginError" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -122,7 +118,103 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.authorization_page.AuthorizationSuccess.loginSuccess&quot;" />
+            <option value="&quot;tests.authorization_page.AuthorizationError.loginError&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="CheckClickableToggles.checkClickableToggles" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.checks_page.CheckClickableToggles.checkClickableToggles&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="NameCheck.nameCheck" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.checks_page.NameCheck.nameCheck&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.checks_page.Test&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.checks_page.Test.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -151,12 +243,20 @@
     <list>
       <item itemvalue="Gradle.debug_test_report" />
       <item itemvalue="Gradle.allTestsRun_generateReport" />
-      <item itemvalue="Gradle.AuthorizationSuccess.loginSuccess" />
+      <item itemvalue="Gradle.CheckClickableToggles.checkClickableToggles" />
+      <item itemvalue="Gradle.NameCheck.nameCheck" />
+      <item itemvalue="Gradle.AuthorizationError.loginError" />
+      <item itemvalue="Gradle.Test" />
+      <item itemvalue="Gradle.Test.test" />
       <item itemvalue="JUnit.start-all-tests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.AuthorizationSuccess.loginSuccess" />
+        <item itemvalue="Gradle.NameCheck.nameCheck" />
+        <item itemvalue="Gradle.CheckClickableToggles.checkClickableToggles" />
+        <item itemvalue="Gradle.Test.test" />
+        <item itemvalue="Gradle.AuthorizationError.loginError" />
+        <item itemvalue="Gradle.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -186,7 +286,10 @@
       <workItem from="1698062989363" duration="7549000" />
       <workItem from="1698128659957" duration="11461000" />
       <workItem from="1698143261841" duration="1576000" />
-      <workItem from="1698145011909" duration="6087000" />
+      <workItem from="1698145011909" duration="6300000" />
+      <workItem from="1698211131783" duration="17837000" />
+      <workItem from="1698245578107" duration="1990000" />
+      <workItem from="1698248209112" duration="8271000" />
     </task>
     <task id="LOCAL-00001" summary="end">
       <option name="closed" value="true" />
@@ -220,7 +323,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698141428532</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add MainPage">
+      <option name="closed" value="true" />
+      <created>1698152954634</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1698152954634</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,6 +352,7 @@
     <MESSAGE value="end" />
     <MESSAGE value="add EditNewProduct test" />
     <MESSAGE value="finish test edit new product" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish test edit new product" />
+    <MESSAGE value="add MainPage" />
+    <option name="LAST_COMMIT_MESSAGE" value="add MainPage" />
   </component>
 </project>

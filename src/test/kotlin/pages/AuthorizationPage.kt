@@ -1,9 +1,11 @@
 package pages
 
+import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.element
 import com.codeborne.selenide.Selenide.open
+import pages.main_page.MainPage
 
-class AuthorizationPage(private val subUrl: String) {
+class AuthorizationPage(subUrl: String) : MainPage(subUrl) {
 
     val loginOrPassword = "admin"
 
@@ -12,7 +14,8 @@ class AuthorizationPage(private val subUrl: String) {
     fun enterButton() = element("button").`as`("[Войти]")
     fun errorMessage() = element("p.Mui-error").`as`("Сообщение об ошибке")
 
-    fun openPage() {
-        open(subUrl)
+    override fun openPage() {
+        open(subURL)
     }
+
 }

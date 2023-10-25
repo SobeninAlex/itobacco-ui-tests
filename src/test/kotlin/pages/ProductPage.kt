@@ -8,20 +8,15 @@ import com.codeborne.selenide.SelenideElement
 import org.openqa.selenium.By.xpath
 import pages.main_page.MainPage
 
-class ProductPage(private val subURL: String) : MainPage() {
+class ProductPage(subURL: String) : MainPage(subURL) {
 
     val orderPageTitle = "Продукция"
     val orderPageSidebarTitle = "Создать продукт"
 
-    //TODO перенести общие элементы для всех страниц в MainPage()
-    fun searchField() = element(xpath("//label/following-sibling::div/input")).`as`("Поле 'Поиск'")
-    fun saveButton() = element("button[type='submit']").`as`("[Сохранить]")
-    fun sidebar() = element("form").`as`("Сайдбар")
-    fun cancelButton() = element(xpath("//button[text()='Отменить']")).`as`("[Отменить]")
     fun deleteOptionButton() = element("form button > svg > path").`as`("[Удалить параметр]")
     fun addOptionButton() = element(xpath("//button[text()='Добавить параметр']")).`as`("[+ Добавить параметр]")
     fun optionsTemplateTab() = element(xpath("//div[text()='Параметры шаблона']")).`as`("Таб [Параметры шаблона]")
-    fun testVariablesList() = elements("input").`as`("Поля ввода для тестовых переменных")
+    fun testVariablesList() = elements("input").`as`("Поля ввода для текстовых переменных")
     fun packTemplateField() = element("[name='printing.packInstructionTemplateName']").`as`("Поле 'Пачка -> Шаблон'")
     fun firstStickerBoxTemplateField() = element("[name='printing.caseInstructionTemplateName01']").`as`("Поле 'Первый стикер короба -> Шаблон'")
     fun firstStickerBoxImageField() = element("[name='printing.caseInstructionImageName01']").`as`("Поле 'Первый стикер короба -> Изображение'")
@@ -65,14 +60,5 @@ class ProductPage(private val subURL: String) : MainPage() {
     fun nameServiceField() = element("input[name='main.nameService']").`as`("Поле 'Наименование'")
     fun lskuField() = element("input[name='main.lsku']").`as`("Поле 'LSKU'")
     fun nameProductField() = element("input[name='nameMain']").`as`("Поле 'Наименование продукта'")
-    fun sidebarTitle() = element("form h2").`as`("Заголовок сайдбара")
-    fun createButton() = element(xpath("//a[.='Создать']")).`as`("[Создать]")
-
-    fun openPage() {
-        Selenide.open(subURL)
-        Selenide.executeJavaScript<Any>("localStorage.setItem('password', 'admin');")
-        Selenide.executeJavaScript<Any>("localStorage.setItem('username', 'admin');")
-        Selenide.refresh()
-    }
 
 }
