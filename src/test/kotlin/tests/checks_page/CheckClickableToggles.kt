@@ -23,7 +23,9 @@ class CheckClickableToggles : TestBase() {
                 openPage()
                 pageTitle().shouldBe(Condition.visible).shouldHave(Condition.text(checksPageTitle))
 
-                //TODO -> костыль для того что бы Selenide дождался полной загрузки страницы
+                /**
+                 * Костыль для того что бы Selenide дождался полной загрузки страницы
+                 */
                 element(By.xpath("//td[text()='Проверка времени между нанесением и эмиссией КМ']"))
                     .shouldBe(Condition.visible)
             })
