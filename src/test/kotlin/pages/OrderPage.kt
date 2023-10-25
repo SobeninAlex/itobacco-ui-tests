@@ -1,24 +1,11 @@
 package pages
 
-import com.codeborne.selenide.Selenide
-import com.codeborne.selenide.Selenide.element
-import com.codeborne.selenide.Selenide.open
-import org.openqa.selenium.By.ByXPath
+import com.codeborne.selenide.Configuration
+import pages.main_page.MainPage
 
-class OrderPage {
+class OrderPage(subURL: String) : MainPage(subURL) {
 
-    val expectedOrderPageTitle = "Реестр заказов"
-    val expectedOrderPageURL = "http://itobacco-dev-03.k8s.renue.yc/orders/main"
-
-    fun titlePage() = element(ByXPath("//h1[.='Реестр заказов']")).`as`("Заголовок страницы")
-
-    fun openPage() {
-        open("orders/main")
-        Selenide.executeJavaScript<Any>("localStorage.setItem('password', 'admin');")
-        Selenide.executeJavaScript<Any>("localStorage.setItem('username', 'admin');")
-        Selenide.refresh()
-    }
-
-
+    val orderPageTitle = "Реестр заказов"
+    val orderPageURL: String get() = Configuration.baseUrl + subURL
 
 }

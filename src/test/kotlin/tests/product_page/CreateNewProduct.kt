@@ -8,8 +8,8 @@ import io.qameta.allure.Epic
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
-import pages.PRODUCT_PAGE
-import services.PoManager
+import pages.main_page.PRODUCT_PAGE
+import services.PO_MANAGER
 import support.*
 import test_settings.TestBase
 
@@ -21,14 +21,14 @@ class CreateNewProduct : TestBase() {
     @DisplayName("Успешное создание новой продукции")
     fun createNewProduct_Success() {
         with(PRODUCT_PAGE) {
-            step("Открытие страницы 'Продукция'", ThrowableRunnableVoid {
+            step("Переход на страницу 'Продукция'", ThrowableRunnableVoid {
                 openPage()
-                pageTitle().shouldBe(visible).shouldHave(text(expectedPageTitle))
+                pageTitle().shouldBe(visible).shouldHave(text(orderPageTitle))
             })
 
             step("Клик по [Создать]", ThrowableRunnableVoid {
                 createButton().click()
-                sidebarTitle().shouldBe(visible).shouldHave(text(expectedSidebarTitle))
+                sidebarTitle().shouldBe(visible).shouldHave(text(orderPageSidebarTitle))
                 saveButton().shouldBe(disabled)
             })
 
@@ -42,12 +42,14 @@ class CreateNewProduct : TestBase() {
                 countryCodeSelector().find(text(countryCode)).click()
                 commentField().setValue(comment)
                 productionModeSelector().find(text(productionMode)).click()
-                GTINs(pack = packGTIN, block = blockGTIN, box = boxGTIN)
+                packGTIN().value = packGTIN
+                blockGTIN().value = blockGTIN
+                boxGTIN().value = boxGTIN
                 aggregation("20", "10", "31", "10", "20")
             })
 
             step("Клик по вкладке 'Шаблоны печати' -> Заполнение", ThrowableRunnableVoid {
-                printTemplateTab().click()
+                templatePrintTab().click()
                 packTemplateField().setValue(packTemplate)
                 stickerBlockTemplateField().setValue(template)
                 stickerBlockImageField().setValue(bitmap)
@@ -57,15 +59,15 @@ class CreateNewProduct : TestBase() {
                 secondStickerBoxImageField().setValue(bitmap)
             })
 
-            step("Клик по вкладке 'Текстовые переменные' -> скролл", ThrowableRunnableVoid {
+            step("Клик по вкладке 'Текстовые переменные' -> Скролл до последнего элемента", ThrowableRunnableVoid {
                 textVariablesTab().click()
                 testVariablesList().last().`as`("Последнее поле ввода 'Текстовые переменные'").scrollIntoView(true)
             })
 
             step("Клик по вкладке 'Параметры шаблона' -> Добавление и удаление параметров", ThrowableRunnableVoid{
-                templateOptionsTab().click()
+                optionsTemplateTab().click()
                 addOptionButton().click()
-                optionValueSelector().find(text(optionValue)).click()
+                valueOptionSelector(0).find(text(valueOption_Date_LineCode)).click()
                 repeat(5) {
                     addOptionButton().click()
                 }
@@ -78,12 +80,12 @@ class CreateNewProduct : TestBase() {
                 saveButton().click()
             })
 
-            step("Используем поле 'Поиск', что бы проверить только что созданный продукт -> Проверяем атрибуты продукта", ThrowableRunnableVoid {
+            step("Используем поле 'Поиск' -> Поиск только что созданного продукта -> Проверка атрибутов продукта", ThrowableRunnableVoid {
                 searchField().setValue(RSKU)
-                productList()
+                listItems()
                     .shouldBe(CollectionCondition.size(1))
 
-                val listAtr = productList()[0].findAll("td")
+                val listAtr = listItems()[0].findAll("td")
                 listAtr[0].`as`("RSKU").shouldHave(text(RSKU))
                 listAtr[1].`as`("Наименование").shouldHave(text(nameProduct))
                 listAtr[2].`as`("Режим пр-ва").shouldHave(text(productionMode))
@@ -98,7 +100,7 @@ class CreateNewProduct : TestBase() {
 
     @AfterEach
     fun after() {
-        PoManager().deleteProduct(RSKU)
+        PO_MANAGER.deleteProduct(RSKU)
     }
 
 }

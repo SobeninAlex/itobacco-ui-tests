@@ -17,7 +17,7 @@ abstract class TestBase {
             Configuration.browser = "chrome"
             Configuration.browserSize = "1920x1080"
             Configuration.browserPosition = "0x0"
-            Configuration.headless = false //фоновый режим
+            Configuration.headless = true //фоновый режим
             Configuration.pageLoadTimeout = 50000
             SelenideLogger.addListener(
                 "AllureSelenide",
