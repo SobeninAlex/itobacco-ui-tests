@@ -1,6 +1,5 @@
 package pages
 
-import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.element
 import com.codeborne.selenide.Selenide.open
 import pages.main_page.MainPage

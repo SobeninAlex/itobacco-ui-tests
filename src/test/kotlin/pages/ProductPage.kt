@@ -1,7 +1,6 @@
 package pages
 
 import com.codeborne.selenide.ElementsCollection
-import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.element
 import com.codeborne.selenide.Selenide.elements
 import com.codeborne.selenide.SelenideElement
