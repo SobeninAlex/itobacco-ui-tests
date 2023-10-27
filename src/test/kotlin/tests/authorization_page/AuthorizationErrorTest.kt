@@ -4,14 +4,16 @@ import com.codeborne.selenide.Condition
 import io.qameta.allure.Allure
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Epic
+import io.qameta.allure.Story
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import pages.main_page.AUTHORIZATION_PAGE
 import test_settings.TestBase
 
 @Epic("Тесты на авторизацию в системе iTobacco")
+@Story("Функциональные тесты")
 @DisplayName("Ошибка авторизации")
-class AuthorizationError : TestBase() {
+class AuthorizationErrorTest : TestBase() {
 
     @Test
     @DisplayName("Ошибка авторизации")

@@ -5,6 +5,7 @@ import com.codeborne.selenide.Condition.*
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Allure.step
 import io.qameta.allure.Epic
+import io.qameta.allure.Story
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -14,8 +15,9 @@ import support.*
 import test_settings.TestBase
 
 @Epic("Тесты на страницу 'Продукция'")
+@Story("Функциональные тесты")
 @DisplayName("Успешное создание новой продукции")
-class CreateNewProduct : TestBase() {
+class CreateNewProductTest : TestBase() {
 
     @Test
     @DisplayName("Успешное создание новой продукции")
@@ -29,7 +31,7 @@ class CreateNewProduct : TestBase() {
             step("Клик по [Создать]", ThrowableRunnableVoid {
                 createButton().click()
                 sidebarTitle().shouldBe(visible).shouldHave(text(orderPageSidebarTitle))
-                saveButton().shouldBe(disabled)
+                submitButton().shouldBe(disabled)
             })
 
             step("Заполнение вкладки 'Атрибуты'", ThrowableRunnableVoid {
@@ -77,7 +79,7 @@ class CreateNewProduct : TestBase() {
             })
 
             step("Клик по [Сохранить]", ThrowableRunnableVoid {
-                saveButton().click()
+                submitButton().click()
             })
 
             step("Используем поле 'Поиск' -> Поиск только что созданного продукта -> Проверка атрибутов продукта", ThrowableRunnableVoid {

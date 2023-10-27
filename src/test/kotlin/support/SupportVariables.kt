@@ -1,5 +1,8 @@
 package support
 
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+
 val RSKU = randomNumeric(8)
 val nameProduct = randomAlphabetic(30)
 const val productionMode = "31"
@@ -20,3 +23,8 @@ const val packVariables_RUSSIA = "RUSSIA"
 const val packVariables_LINE3 = "LINE3"
 const val packVariables_LINE4 = "LINE4"
 const val nameService = "RU, Fi27"
+const val typeReport_UsageReport = "Отчет по использованию"
+const val typeReport_ProductReport = "Отчет по продукции"
+const val typeReport_OrderReport = "Отчет по заказам"
+val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("ddMMyyyy")
+val dateNow: LocalDate = LocalDate.now()

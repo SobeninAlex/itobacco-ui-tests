@@ -6,6 +6,9 @@ import pages.main_page.MainPage
 
 class ChecksPage(subURL: String) : MainPage(subURL) {
 
+    val nameCheckedLocator = "td:nth-of-type(1)"
+    val descriptionChecksLocator = "td:nth-of-type(2)"
+
     val checksPageTitle = "Проверки произведенной продукции"
 
     val nameChecksList = listOf(
@@ -16,7 +19,7 @@ class ChecksPage(subURL: String) : MainPage(subURL) {
         "Проверка на микс продукции",
         "Проверка времени между нанесением и агрегацией КМ",
         "Проверка структуры GTIN",
-        "skjdfskПроверка контрольной цифры GTIN",
+        "Проверка контрольной цифры GTIN",
         "Проверка структуры КМ",
         "Проверка эмиссии кода системой",
         "Проверка отправки кода на печать",
@@ -55,8 +58,5 @@ class ChecksPage(subURL: String) : MainPage(subURL) {
             index++
         }
     }
-
-    val nameCheckedLocator = "td:nth-of-type(1)"
-    val descriptionChecksLocator = "td:nth-of-type(2)"
 
 }

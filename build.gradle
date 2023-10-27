@@ -1,7 +1,7 @@
 plugins {
   id 'java'
   id 'org.jetbrains.kotlin.jvm' version '1.8.21'
-  id 'io.qameta.allure' version '2.9.3'
+  id 'io.qameta.allure' version '2.11.2'
 }
 
 group 'com.example'
@@ -31,12 +31,12 @@ tasks.withType(JavaCompile) {
 
 dependencies {
   testImplementation('com.codeborne:selenide:6.19.0')
-  testImplementation("io.qameta.allure:allure-selenide:${allureVersion}")
+//  testImplementation("io.qameta.allure:allure-selenide:${allureVersion}")
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
   testImplementation("io.rest-assured:rest-assured:5.3.2")
   implementation('org.json:json:20230227')
-
+  testImplementation("com.github.romankh3:image-comparison:4.4.0")
 }
 
 tasks.register('cleanTest', Delete) {

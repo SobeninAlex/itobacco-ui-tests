@@ -4,6 +4,7 @@ import com.codeborne.selenide.Condition.*
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Allure.step
 import io.qameta.allure.Epic
+import io.qameta.allure.Story
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
@@ -14,8 +15,9 @@ import support.*
 import test_settings.TestBase
 
 @Epic("Тесты на страницу 'Продукция'")
+@Story("Функциональные тесты")
 @DisplayName("Редактирование продукции")
-class EditNewProduct : TestBase() {
+class EditNewProductTest : TestBase() {
 
     private val serviceName = randomAlphabetic(5)
     private val comment = randomAlphabetic(30)
@@ -53,7 +55,7 @@ class EditNewProduct : TestBase() {
                     .shouldBe(visible)
                     .shouldHave(text(nameProduct))
 
-                saveButton().shouldBe(disabled)
+                submitButton().shouldBe(disabled)
             })
 
             step("Редактирование поля 'Наименование (служебное)'", ThrowableRunnableVoid {
@@ -104,7 +106,7 @@ class EditNewProduct : TestBase() {
             })
 
             step("Клик по [Сохранить]", ThrowableRunnableVoid {
-                saveButton().click()
+                submitButton().click()
             })
 
             step("Проверка: изменения применились", ThrowableRunnableVoid{
@@ -147,7 +149,7 @@ class EditNewProduct : TestBase() {
             })
 
             step("Проверка: [Сохранить] задизейблена -> клик по [Отмена] -> проверка: сайдбар закрылся", ThrowableRunnableVoid {
-                saveButton().shouldBe(disabled)
+                submitButton().shouldBe(disabled)
                 cancelButton().click()
                 sidebar().shouldNotBe(visible)
             })
