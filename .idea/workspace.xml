@@ -4,28 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="add test on checks page">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ReportPage.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/services/Namespace.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/functional_tests/DownloadReportTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarDisplayedTestLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputTestLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/screens/calendarErrorInputInSidebarReport_Layout.png" afterDir="false" />
+    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="add layout test on report page">
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/example/Test_2.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/ChecksPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ChecksPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/ProductPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ProductPage.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/ReportPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ReportPage.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/MainPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/MainPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/Pages.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/Pages.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/services/SettingsService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/services/SettingsService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/support/SupportVariables.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/support/SupportVariables.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/test_settings/TestBase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/test_settings/TestBase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationError.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationErrorTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationSuccess.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/authorization_page/AuthorizationSuccessTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/CheckClickableToggles.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/ClickableTogglesTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/NameCheck.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/NameChecksTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/CreateNewProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/CreateNewProductTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProduct.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProductTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/NameChecksTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/checks_page/NameChecksTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/CreateNewProductTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/CreateNewProductTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProductTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProductTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputTestLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputTestLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/screens/calendarErrorInputInSidebarReport_Layout.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,6 +51,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="Kotlin File" />
+        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -117,7 +111,7 @@
     </key>
   </component>
   <component name="RunManager" selected="Gradle.itobacco-ui-tests [allureServe]">
-    <configuration name="CalendarErrorInputTestLayout" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EditNewProductTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -130,7 +124,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.report_page.layout_tests.CalendarErrorInputTestLayout&quot;" />
+            <option value="&quot;tests.product_page.EditNewProductTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -141,7 +135,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CalendarErrorInputTestLayout.calendarErrorInputInSidebarReport_Layout" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EditNewProductTest.editNewProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -154,7 +148,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.report_page.layout_tests.CalendarErrorInputTestLayout.calendarErrorInputInSidebarReport_Layout&quot;" />
+            <option value="&quot;tests.product_page.EditNewProductTest.editNewProduct&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -165,26 +159,52 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="itobacco-ui-tests [allureReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Test_2" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
         <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
+        <option name="scriptParameters" value="" />
         <option name="taskDescriptions">
           <list />
         </option>
         <option name="taskNames">
           <list>
-            <option value="allureReport" />
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.example.Test_2&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
       <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
       <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <configuration name="Test_2.demoTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;tests.example.Test_2.demoTest&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="itobacco-ui-tests [allureServe]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -199,28 +219,6 @@
         <option name="taskNames">
           <list>
             <option value="allureServe" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>false</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="itobacco-ui-tests [cleanTest]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="cleanTest" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -249,20 +247,20 @@
     <list>
       <item itemvalue="Gradle.debug_test_report" />
       <item itemvalue="Gradle.allTestsRun_generateReport" />
-      <item itemvalue="Gradle.CalendarErrorInputTestLayout" />
-      <item itemvalue="Gradle.itobacco-ui-tests [allureReport]" />
       <item itemvalue="Gradle.itobacco-ui-tests [allureServe]" />
-      <item itemvalue="Gradle.CalendarErrorInputTestLayout.calendarErrorInputInSidebarReport_Layout" />
-      <item itemvalue="Gradle.itobacco-ui-tests [cleanTest]" />
+      <item itemvalue="Gradle.EditNewProductTest" />
+      <item itemvalue="Gradle.EditNewProductTest.editNewProduct" />
+      <item itemvalue="Gradle.Test_2" />
+      <item itemvalue="Gradle.Test_2.demoTest" />
       <item itemvalue="JUnit.start-all-tests" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.itobacco-ui-tests [allureServe]" />
-        <item itemvalue="Gradle.CalendarErrorInputTestLayout" />
-        <item itemvalue="Gradle.CalendarErrorInputTestLayout.calendarErrorInputInSidebarReport_Layout" />
-        <item itemvalue="Gradle.itobacco-ui-tests [allureReport]" />
-        <item itemvalue="Gradle.itobacco-ui-tests [cleanTest]" />
+        <item itemvalue="Gradle.EditNewProductTest.editNewProduct" />
+        <item itemvalue="Gradle.EditNewProductTest" />
+        <item itemvalue="Gradle.Test_2" />
+        <item itemvalue="Gradle.Test_2.demoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -299,7 +297,14 @@
       <workItem from="1698297450618" duration="408000" />
       <workItem from="1698297901130" duration="21793000" />
       <workItem from="1698409666127" duration="4830000" />
-      <workItem from="1698414560408" duration="1381000" />
+      <workItem from="1698414560408" duration="1501000" />
+      <workItem from="1698432550886" duration="11154000" />
+      <workItem from="1698481535657" duration="13649000" />
+      <workItem from="1698503518026" duration="2507000" />
+      <workItem from="1698506428435" duration="348000" />
+      <workItem from="1698514459536" duration="7447000" />
+      <workItem from="1698522930088" duration="5045000" />
+      <workItem from="1698527995571" duration="575000" />
     </task>
     <task id="LOCAL-00001" summary="end">
       <option name="closed" value="true" />
@@ -365,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698256621361</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add layout test on report page">
+      <option name="closed" value="true" />
+      <created>1698416007925</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1698416007925</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -388,15 +401,31 @@
     <MESSAGE value="finish test edit new product" />
     <MESSAGE value="add MainPage" />
     <MESSAGE value="add test on checks page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add test on checks page" />
+    <MESSAGE value="add layout test on report page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add layout test on report page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputTestLayout.kt</url>
-          <line>64</line>
-          <option name="timeStamp" value="1" />
+          <line>56</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputTestLayout.kt</url>
+          <line>53</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/tests/example/Test_2.kt</url>
+          <line>43</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProductTest.kt</url>
+          <line>120</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

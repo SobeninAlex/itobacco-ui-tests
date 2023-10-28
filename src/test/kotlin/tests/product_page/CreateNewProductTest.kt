@@ -29,9 +29,9 @@ class CreateNewProductTest : TestBase() {
             })
 
             step("Клик по [Создать]", ThrowableRunnableVoid {
-                createButton().click()
+                create_Button().click()
                 sidebarTitle().shouldBe(visible).shouldHave(text(orderPageSidebarTitle))
-                submitButton().shouldBe(disabled)
+                submit_Button().shouldBe(disabled)
             })
 
             step("Заполнение вкладки 'Атрибуты'", ThrowableRunnableVoid {
@@ -39,11 +39,11 @@ class CreateNewProductTest : TestBase() {
                 rskuField().setValue(RSKU)
                 lskuField().setValue("0$RSKU")
                 nameServiceField().setValue(nameService)
-                factoryCodeSelector().find(text(factoryCode)).click()
+                factoryCode_DropDownList().find(text(factoryCode)).click()
                 mrpField().setValue(mrp)
-                countryCodeSelector().find(text(countryCode)).click()
+                countryCode_DropDownList().find(text(countryCode)).click()
                 commentField().setValue(comment)
-                productionModeSelector().find(text(productionMode)).click()
+                productionMode_DropDownList().find(text(productionMode)).click()
                 packGTIN().value = packGTIN
                 blockGTIN().value = blockGTIN
                 boxGTIN().value = boxGTIN
@@ -52,7 +52,7 @@ class CreateNewProductTest : TestBase() {
 
             step("Клик по вкладке 'Шаблоны печати' -> Заполнение", ThrowableRunnableVoid {
                 templatePrintTab().click()
-                packTemplateField().setValue(packTemplate)
+                packTemplate_Field().setValue(packTemplate)
                 stickerBlockTemplateField().setValue(template)
                 stickerBlockImageField().setValue(bitmap)
                 firstStickerBoxTemplateField().setValue(template)
@@ -63,31 +63,31 @@ class CreateNewProductTest : TestBase() {
 
             step("Клик по вкладке 'Текстовые переменные' -> Скролл до последнего элемента", ThrowableRunnableVoid {
                 textVariablesTab().click()
-                testVariablesList().last().`as`("Последнее поле ввода 'Текстовые переменные'").scrollIntoView(true)
+                textVariables_FieldList().last().`as`("Последнее поле ввода 'Текстовые переменные'").scrollIntoView(true)
             })
 
             step("Клик по вкладке 'Параметры шаблона' -> Добавление и удаление параметров", ThrowableRunnableVoid{
-                optionsTemplateTab().click()
-                addOptionButton().click()
-                valueOptionSelector(0).find(text(valueOption_Date_LineCode)).click()
+                parametersTemplate_Tab().click()
+                addParameter_Button().click()
+                valueParameter_DropDownList(0).find(text(valueOption_Date_LineCode)).click()
                 repeat(5) {
-                    addOptionButton().click()
+                    addParameter_Button().click()
                 }
                 repeat(6) {
-                    deleteOptionButton().click()
+                    deleteParameter_Button().click()
                 }
             })
 
             step("Клик по [Сохранить]", ThrowableRunnableVoid {
-                submitButton().click()
+                submit_Button().click()
             })
 
             step("Используем поле 'Поиск' -> Поиск только что созданного продукта -> Проверка атрибутов продукта", ThrowableRunnableVoid {
-                searchField().setValue(RSKU)
-                listItems()
+                search_Field().setValue(RSKU)
+                listItems_List()
                     .shouldBe(CollectionCondition.size(1))
 
-                val listAtr = listItems()[0].findAll("td")
+                val listAtr = listItems_List()[0].findAll("td")
                 listAtr[0].`as`("RSKU").shouldHave(text(RSKU))
                 listAtr[1].`as`("Наименование").shouldHave(text(nameProduct))
                 listAtr[2].`as`("Режим пр-ва").shouldHave(text(productionMode))

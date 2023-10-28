@@ -1,8 +1,20 @@
 package support
 
+import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.SelenideElement
+import com.github.romankh3.image.comparison.ImageComparison
+import com.github.romankh3.image.comparison.ImageComparisonUtil
+import com.github.romankh3.image.comparison.model.ImageComparisonResult
+import com.github.romankh3.image.comparison.model.ImageComparisonState
+import io.qameta.allure.Attachment
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.TestInfo
 import org.openqa.selenium.By.ByXPath
 import org.openqa.selenium.Keys
+import org.openqa.selenium.OutputType
+import java.io.File
+import java.io.IOException
+import java.nio.file.Files
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -27,4 +39,47 @@ fun SelenideElement.editField(newValue: String) {
     sendKeys(Keys.CONTROL, "A")
     sendKeys(Keys.DELETE)
     value = newValue
+}
+
+//метод для скрина и сравнения эталонного и фактического скриншота
+fun assertScreen(testInfo: TestInfo) {
+    val expectedFileName = testInfo.testMethod.get().name + ".png"
+    val expectedScreensDir = "src/test/resources/screens/"
+
+    val actualScreenshot = Selenide.screenshot(OutputType.FILE) as File
+    val expectedScreenshot = File(expectedScreensDir + expectedFileName)
+
+    if (!expectedScreenshot.exists()) {
+        addImageToAllure("actual", actualScreenshot)
+        throw IllegalArgumentException("Can't assert image. No reference screenshot. Actual screen can be downloaded from allure")
+    }
+
+    val expectedImage = ImageComparisonUtil.readImageFromResources(expectedScreensDir + expectedFileName)
+    val actualImage = ImageComparisonUtil.readImageFromResources(actualScreenshot.toPath().toString())
+
+    val resultDestination = File("build/diffs/diff_$expectedFileName")
+
+    val imageComparison = ImageComparison(expectedImage, actualImage, resultDestination)
+    val result: ImageComparisonResult = imageComparison.compareImages()
+
+    if (!result.imageComparisonState.equals(ImageComparisonState.MATCH)) {
+        addImageToAllure("actual", actualScreenshot)
+        addImageToAllure("expected", expectedScreenshot)
+        addImageToAllure("result", resultDestination)
+    }
+    Assertions.assertEquals(ImageComparisonState.MATCH, result.imageComparisonState)
+}
+
+private fun addImageToAllure(name: String, file: File) {
+    try {
+        val image = Files.readAllBytes(file.toPath())
+        saveScreenshot(name, image)
+    } catch (ex: IOException) {
+        throw RuntimeException("Can't read bytes")
+    }
+}
+
+@Attachment(value = "{name}", type = "image/png")
+private fun saveScreenshot(name: String, image: ByteArray): ByteArray {
+    return image
 }

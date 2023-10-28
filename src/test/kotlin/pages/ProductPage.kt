@@ -12,11 +12,11 @@ class ProductPage(subURL: String) : MainPage(subURL) {
     val orderPageTitle = "Продукция"
     val orderPageSidebarTitle = "Создать продукт"
 
-    fun deleteOptionButton() = element("form button > svg > path").`as`("[Удалить параметр]")
-    fun addOptionButton() = element(xpath("//button[text()='Добавить параметр']")).`as`("[+ Добавить параметр]")
-    fun optionsTemplateTab() = element(xpath("//div[text()='Параметры шаблона']")).`as`("Таб [Параметры шаблона]")
-    fun testVariablesList() = elements("input").`as`("Поля ввода для текстовых переменных")
-    fun packTemplateField() = element("[name='printing.packInstructionTemplateName']").`as`("Поле 'Пачка -> Шаблон'")
+    fun deleteParameter_Button() = element("form button > svg > path").`as`("[Удалить параметр]")
+    fun addParameter_Button() = element(xpath("//button[text()='Добавить параметр']")).`as`("[+ Добавить параметр]")
+    fun parametersTemplate_Tab() = element(xpath("//div[text()='Параметры шаблона']")).`as`("Таб [Параметры шаблона]")
+    fun textVariables_FieldList() = elements("input").`as`("Поля ввода для текстовых переменных")
+    fun packTemplate_Field() = element("[name='printing.packInstructionTemplateName']").`as`("Поле 'Пачка -> Шаблон'")
     fun firstStickerBoxTemplateField() = element("[name='printing.caseInstructionTemplateName01']").`as`("Поле 'Первый стикер короба -> Шаблон'")
     fun firstStickerBoxImageField() = element("[name='printing.caseInstructionImageName01']").`as`("Поле 'Первый стикер короба -> Изображение'")
     fun secondStickerBoxTemplateField() = element("[name='printing.caseInstructionTemplateName02']").`as`("Поле 'Второй стикер короба -> Шаблон'")
@@ -35,23 +35,23 @@ class ProductPage(subURL: String) : MainPage(subURL) {
     fun packGTIN() = element("[name='main.gtinPack']").`as`("Поле 'GTIN пачки'")
     fun blockGTIN() = element("[name='main.gtinBlock']").`as`("Поле 'GTIN блока'")
     fun boxGTIN() = element("[name='main.gtinCase']").`as`("Поле 'GTIN короба'")
-    fun productionModeSelector(): ElementsCollection {
+    fun productionMode_DropDownList(): ElementsCollection {
         element("div[id='mui-component-select-main.productionMode']").`as`("Выпадающее меню 'Режим производства'").click()
-        return items()
+        return items_dropDownList()
     }
-    fun valueOptionSelector(index: Int): ElementsCollection {
-        valueOptionField(index).click()
-        return items()
+    fun valueParameter_DropDownList(index: Int): ElementsCollection {
+        valueParameterField(index).click()
+        return items_dropDownList()
     }
-    fun valueOptionField(index: Int): SelenideElement = element("div[id='mui-component-select-parameters.$index.value']").`as`("Выпадающее меню 'Значение параметра'(значение параметра шаблона пачки)")
+    fun valueParameterField(index: Int): SelenideElement = element("div[id='mui-component-select-parameters.$index.value']").`as`("Выпадающее меню 'Значение параметра'(значение параметра шаблона пачки)")
     fun optionTemplateNameField(index: Int) = element("input[name='parameters.$index.variable']").`as`("Поле 'Параметр'(имя переменной шаблона пачки)")
-    fun countryCodeSelector(): ElementsCollection {
+    fun countryCode_DropDownList(): ElementsCollection {
         element("div[id='mui-component-select-main.countryCode']").`as`("Выпадающее меню 'Код страны'").click()
-        return items()
+        return items_dropDownList()
     }
-    fun factoryCodeSelector(): ElementsCollection {
+    fun factoryCode_DropDownList(): ElementsCollection {
         element("div[id='mui-component-select-main.factoryCode']").`as`("Выпадающее меню 'Код фабрики'").click()
-        return items()
+        return items_dropDownList()
     }
     fun rskuField() = element("input[name='main.rsku']").`as`("Поле 'RSKU'")
     fun commentField() = element("input[name='main.comment']").`as`("Поле 'Комментарии'")

@@ -30,13 +30,25 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-  testImplementation('com.codeborne:selenide:6.19.0')
+//  testImplementation('com.codeborne:selenide:6.19.0')
+  implementation("com.codeborne:selenide:7.0.1")
 //  testImplementation("io.qameta.allure:allure-selenide:${allureVersion}")
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
   testImplementation("io.rest-assured:rest-assured:5.3.2")
   implementation('org.json:json:20230227')
   testImplementation("com.github.romankh3:image-comparison:4.4.0")
+
+//// https://mvnrepository.com/artifact/com.microsoft.playwright/playwright
+//  implementation("com.microsoft.playwright:playwright:1.39.0")
+
+  // https://mvnrepository.com/artifact/com.codeborne/selenide-proxy
+  implementation('com.codeborne:selenide-proxy:7.0.1')
+
+  // https://mvnrepository.com/artifact/io.qameta.allure/allure-selenide
+  implementation("io.qameta.allure:allure-selenide:2.24.0")
+
+
 }
 
 tasks.register('cleanTest', Delete) {

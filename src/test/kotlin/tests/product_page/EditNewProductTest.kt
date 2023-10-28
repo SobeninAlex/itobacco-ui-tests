@@ -43,9 +43,9 @@ class EditNewProductTest : TestBase() {
             })
 
             step("Поиск продукцию по RSKU -> клик по найденной продукции", ThrowableRunnableVoid {
-                searchField().setValue(RSKU)
+                search_Field().setValue(RSKU)
 
-                listItems()[0]
+                listItems_List()[0]
                     .shouldBe(visible)
                     .find("td")
                     .shouldHave(text(RSKU))
@@ -55,7 +55,7 @@ class EditNewProductTest : TestBase() {
                     .shouldBe(visible)
                     .shouldHave(text(nameProduct))
 
-                submitButton().shouldBe(disabled)
+                submit_Button().shouldBe(disabled)
             })
 
             step("Редактирование поля 'Наименование (служебное)'", ThrowableRunnableVoid {
@@ -79,7 +79,7 @@ class EditNewProductTest : TestBase() {
             step("Переход к Шаблонам печати -> редактирование шаблонов", ThrowableRunnableVoid {
                 templatePrintTab().click()
 
-                packTemplateField().editField(packTemplate)
+                packTemplate_Field().editField(packTemplate)
                 stickerBlockTemplateField().editField(template)
                 stickerBlockImageField().editField(image)
                 firstStickerBoxTemplateField().editField(template)
@@ -89,28 +89,28 @@ class EditNewProductTest : TestBase() {
             })
 
             step("Переход к Параметрам шаблона -> редактирование параметров", ThrowableRunnableVoid {
-                optionsTemplateTab().click()
+                parametersTemplate_Tab().click()
 
                 repeat(3) {
-                    addOptionButton().click()
+                    addParameter_Button().click()
                 }
 
                 optionTemplateNameField(0).value = packVariables_RUSSIA
-                valueOptionSelector(0).find(text(valueOption_Code)).click()
+                valueParameter_DropDownList(0).find(text(valueOption_Code)).click()
 
                 optionTemplateNameField(1).value = packVariables_LINE3
-                valueOptionSelector(1).find(text(valueOption_Date_LineCode)).click()
+                valueParameter_DropDownList(1).find(text(valueOption_Date_LineCode)).click()
 
                 optionTemplateNameField(2).value = packVariables_LINE4
-                valueOptionSelector(2).find(text(valueOption_MRP_Date)).click()
+                valueParameter_DropDownList(2).find(text(valueOption_MRP_Date)).click()
             })
 
             step("Клик по [Сохранить]", ThrowableRunnableVoid {
-                submitButton().click()
+                submit_Button().click()
             })
 
             step("Проверка: изменения применились", ThrowableRunnableVoid{
-                val listAtr = listItems()[0].findAll("td")
+                val listAtr = listItems_List()[0].findAll("td")
                 listAtr[4].`as`("МРЦ пачки, коп").shouldHave(text("${mrp.toInt() / 100} 00"))
                 listAtr[5].`as`("GTIN пачки").shouldHave(text(packGTIN))
                 listAtr[6].`as`("GTIN блока").shouldHave(text(blockGTIN))
@@ -118,7 +118,7 @@ class EditNewProductTest : TestBase() {
             })
 
             step("Клик по продукции -> проверка: атрибуты изменились", ThrowableRunnableVoid {
-                listItems()[0].click()
+                listItems_List().first().click()
                 sidebarTitle().shouldBe(visible)
                 nameServiceField().shouldHave(value(serviceName))
                 commentField().shouldHave(value(comment))
@@ -126,7 +126,7 @@ class EditNewProductTest : TestBase() {
 
             step("Переход к шаблонам печати -> проверка: шаблоны и изображения изменились", ThrowableRunnableVoid {
                 templatePrintTab().click()
-                packTemplateField().shouldHave(value(packTemplate))
+                packTemplate_Field().shouldHave(value(packTemplate))
                 stickerBlockTemplateField().shouldHave(value(template))
                 stickerBlockImageField().shouldHave(value(image))
                 firstStickerBoxTemplateField().shouldHave(value(template))
@@ -136,21 +136,21 @@ class EditNewProductTest : TestBase() {
             })
 
             step("Переход к параметрам шаблона -> проверка: переменные добавились", ThrowableRunnableVoid {
-                optionsTemplateTab().click()
+                parametersTemplate_Tab().click()
 
                 optionTemplateNameField(0).shouldHave(value(packVariables_RUSSIA))
-                valueOptionField(0).shouldHave(text(valueOption_Code))
+                valueParameterField(0).shouldHave(text(valueOption_Code))
 
                 optionTemplateNameField(1).shouldHave(value(packVariables_LINE3))
-                valueOptionField(1).shouldHave(text(valueOption_Date_LineCode))
+                valueParameterField(1).shouldHave(text(valueOption_Date_LineCode))
 
                 optionTemplateNameField(2).shouldHave(value(packVariables_LINE4))
-                valueOptionField(2).shouldHave(text(valueOption_MRP_Date))
+                valueParameterField(2).shouldHave(text(valueOption_MRP_Date))
             })
 
             step("Проверка: [Сохранить] задизейблена -> клик по [Отмена] -> проверка: сайдбар закрылся", ThrowableRunnableVoid {
-                submitButton().shouldBe(disabled)
-                cancelButton().click()
+                submit_Button().shouldBe(disabled)
+                cancel_Button().click()
                 sidebar().shouldNotBe(visible)
             })
         }

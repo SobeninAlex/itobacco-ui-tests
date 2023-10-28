@@ -9,9 +9,9 @@ class ReportPage(subURL: String) : MainPage(subURL) {
     val reportPageTitle = "Отчеты"
     val reportPageSidebarTitle = "Отчет"
 
-    fun typeReportSelector(): ElementsCollection {
+    fun typeReport_DropDownList(): ElementsCollection {
         element("form div.MuiSelect-select").`as`("Выпадающее меню 'Тип отчета'").click()
-        return items()
+        return items_dropDownList()
     }
 
 }

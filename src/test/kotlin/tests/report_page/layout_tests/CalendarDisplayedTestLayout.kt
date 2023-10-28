@@ -8,4 +8,6 @@ import test_settings.TestBase
 @Story("Тесты на верстку")
 class CalendarDisplayedTestLayout : TestBase() {
 
+    //TODO -> Перед тестами на верстку вырубать SelenideLogger, и включать прокси
+
 }
