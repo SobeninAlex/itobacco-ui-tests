@@ -7,8 +7,7 @@ import io.qameta.allure.selenide.AllureSelenide
 //import io.qameta.allure.selenide.AllureSelenide
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeAll
-import services.Namespace
-import services.Namespace.DEV_03
+import support.Namespace.DEV_03
 
 abstract class TestBase {
 
@@ -17,14 +16,11 @@ abstract class TestBase {
         @BeforeAll
         fun setup() {
             Configuration.baseUrl = DEV_03.url
-            Configuration.browser = "firefox"
+            Configuration.browser = "chrome"
             Configuration.browserSize = "1920x1080"
             Configuration.browserPosition = "0x0"
             Configuration.headless = false //фоновый режим
             Configuration.pageLoadTimeout = 50000
-
-//            Configuration.screenshots = true
-//            Configuration.savePageSource = false
 
             SelenideLogger.addListener(
                 "AllureSelenide",

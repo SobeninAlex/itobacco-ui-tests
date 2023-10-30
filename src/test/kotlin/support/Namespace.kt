@@ -1,4 +1,4 @@
-package services
+package support
 
 enum class Namespace(val url: String) {
     DEV_01("http://itobacco-dev-01.k8s.renue.yc/"),

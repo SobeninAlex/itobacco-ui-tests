@@ -2,6 +2,9 @@ package support
 
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.SelenideElement
+import com.codeborne.selenide.WebDriverRunner
+import com.codeborne.selenide.proxy.RequestMatcher
+import com.codeborne.selenide.proxy.RequestMatchers
 import com.github.romankh3.image.comparison.ImageComparison
 import com.github.romankh3.image.comparison.ImageComparisonUtil
 import com.github.romankh3.image.comparison.model.ImageComparisonResult
@@ -82,4 +85,15 @@ private fun addImageToAllure(name: String, file: File) {
 @Attachment(value = "{name}", type = "image/png")
 private fun saveScreenshot(name: String, image: ByteArray): ByteArray {
     return image
+}
+
+fun mock(method: RequestMatcher.HttpMethod, methodUrl: String, mockResponse: String) {
+    Selenide.open()
+    WebDriverRunner.getSelenideProxy().responseMocker().mockText(
+        "mock",
+        RequestMatchers.urlStartsWith(
+            method,
+            methodUrl
+        )
+    ) { mockResponse }
 }

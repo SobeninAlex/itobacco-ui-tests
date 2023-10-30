@@ -1,7 +1,11 @@
 package tests.product_page
 
 import com.codeborne.selenide.CollectionCondition
+import com.codeborne.selenide.Condition
 import com.codeborne.selenide.Condition.*
+import com.codeborne.selenide.Selenide
+import com.codeborne.selenide.Selenide.sleep
+import com.codeborne.selenide.WebDriverConditions
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Allure.step
 import io.qameta.allure.Epic
@@ -25,6 +29,7 @@ class CreateNewProductTest : TestBase() {
         with(PRODUCT_PAGE) {
             step("Переход на страницу 'Продукция'", ThrowableRunnableVoid {
                 openPage()
+                sleep(1000)
                 pageTitle().shouldBe(visible).shouldHave(text(orderPageTitle))
             })
 

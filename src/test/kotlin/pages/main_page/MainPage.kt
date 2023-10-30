@@ -1,13 +1,19 @@
 package pages.main_page
 
+import com.codeborne.selenide.AuthenticationType
+import com.codeborne.selenide.BasicAuthCredentials
+import com.codeborne.selenide.Configuration
 import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.element
+import com.codeborne.selenide.Selenide.refresh
+import org.openqa.selenium.By
 import org.openqa.selenium.By.cssSelector
 import org.openqa.selenium.By.xpath
 
 open class MainPage(val subURL: String) {
 
-    val dateInputsSelector = cssSelector("input[type='tel']")
+    val dateInputsSelector: By = cssSelector("input[type='tel']")
+    val calendarIcon: By = cssSelector("button[aria-label^='Choose date']")
     fun pageTitle() = element("h1").`as`("Заголовок страницы")
     protected fun items_dropDownList() = Selenide.elements("li[class]").`as`("Список элементов выпадающего списка")
     fun listItems_List() = Selenide.elements("tbody tr").`as`("Список элементов")
@@ -23,7 +29,7 @@ open class MainPage(val subURL: String) {
         Selenide.open(subURL)
         Selenide.executeJavaScript<Any>("localStorage.setItem('password', 'admin');")
         Selenide.executeJavaScript<Any>("localStorage.setItem('username', 'admin');")
-        Selenide.refresh()
+        refresh()
     }
 
 }
