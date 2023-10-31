@@ -15,9 +15,15 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           gradle-version: release-candidate
-  test:
+  build:
     runs-on: ubuntu-latest
     needs: instal
+    steps:
+      - name: Build
+        run: gradle bild
+  test:
+    runs-on: ubuntu-latest
+    needs: build
     steps:
       - name: Test
         run: gradle allureReport
