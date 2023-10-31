@@ -16,4 +16,4 @@ jobs:
         with:
           gradle-version: release-candidate
       - name: Test
-        run: ./gradlew test
+        run: gradle allureReport
