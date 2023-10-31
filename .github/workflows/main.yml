@@ -1,0 +1,8 @@
+name: Workflow
+on: workflow_dispatch
+jobs: 
+  demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print to 
+        run: echo Hello GIT
