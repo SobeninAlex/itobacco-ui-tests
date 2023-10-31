@@ -16,7 +16,7 @@ jobs:
         with:
           gradle-version: release-candidate
       - name: build
-        run: gradle bild
+        run: gradle build
   test:
     runs-on: ubuntu-latest
     needs: build
