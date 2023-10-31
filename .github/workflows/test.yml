@@ -21,7 +21,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: testReport
-          path: build/reports
+          path: build
   report:
     needs: test
     runs-on: ubuntu-latest
