@@ -4,35 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="- add mock&#10;- add layout tests on report page">
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/support/mocks/Mock1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/support/mocks/operational/MockReports.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/support/mocks/operational/MockReportsType.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarDisplayedSidebarTestLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputSidebarTestLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/DropdownReportsTypeDisplayedSidebarTestLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/DropdownReportsTypeDisplayedTestLayout.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/mockResponse/operational_api_v1_report-type.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/screens/calendarErrorInputReports.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/screens/calendarFromDateDisplayedReports.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/screens/calendarToDateDisplayedReports.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/screens/dropdownReportsType.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/screens/dropdownReportsTypeSidebar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/debug_test_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/debug_test_report.xml" afterDir="false" />
+    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="update mock">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/ProductPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ProductPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/ReportPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/ReportPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/MainPage.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/pages/main_page/MainPage.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/support/Namespace.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/support/Namespaces.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/test_settings/TestBase.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/test_settings/TestBase.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/functional_tests/DownloadReportTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/functional_tests/DownloadReportTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarDisplayedTestLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarDisplayedTestLayout.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputTestLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputTestLayout.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/screens/calendarErrorInputInSidebarReport.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/screens/calendarErrorInputInSidebarReports.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/screens/calendarFromDateDisplayed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/screens/calendarFromDateDisplayedSidebarReports.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/screens/calendarToDateDisplayed.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/screens/calendarToDateDisplayedSidebarReports.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,26 +65,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;layout-tests&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/soben/Desktop/QualityAssurance&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "layout-tests",
+    "last_opened_file_path": "C:/Users/soben/Desktop/QualityAssurance",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Global Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\resources\screens" />
@@ -328,7 +301,7 @@
       <workItem from="1698642441420" duration="12029000" />
       <workItem from="1698668107707" duration="2224000" />
       <workItem from="1698730726700" duration="6150000" />
-      <workItem from="1698736989987" duration="12052000" />
+      <workItem from="1698736989987" duration="13686000" />
     </task>
     <task id="LOCAL-00001" summary="end">
       <option name="closed" value="true" />
@@ -418,7 +391,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698658367064</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="update mock">
+      <option name="closed" value="true" />
+      <created>1698750858206</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1698750858206</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +425,8 @@
     <MESSAGE value="add layout test on report page" />
     <MESSAGE value="add Mock" />
     <MESSAGE value="- add mock&#10;- add layout tests on report page" />
-    <option name="LAST_COMMIT_MESSAGE" value="- add mock&#10;- add layout tests on report page" />
+    <MESSAGE value="update mock" />
+    <option name="LAST_COMMIT_MESSAGE" value="update mock" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
