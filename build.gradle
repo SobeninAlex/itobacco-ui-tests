@@ -44,6 +44,8 @@ dependencies {
   // https://mvnrepository.com/artifact/com.codeborne/selenide-proxy
   implementation('com.codeborne:selenide-proxy:7.0.1')
 
+//  implementation("com.browserup:browserup-proxy-core:2.1.2")
+
 }
 
 tasks.register('cleanTest', Delete) {

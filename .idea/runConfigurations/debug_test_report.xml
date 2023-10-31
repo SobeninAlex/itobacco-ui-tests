@@ -1,11 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="debug_test_report" type="GradleRunConfiguration" factoryName="Gradle">
     <ExternalSystemSettings>
-      <option name="env">
-        <map>
-          <entry key="NAMESPACE" value="http://itobacco-dev-03.k8s.renue.yc/" />
-        </map>
-      </option>
       <option name="executionName" />
       <option name="externalProjectPath" value="$PROJECT_DIR$" />
       <option name="externalSystemIdString" value="GRADLE" />
@@ -16,10 +11,10 @@
       </option>
       <option name="taskNames">
         <list>
-          <option value=":test" />
+          <option value="test" />
           <option value="--tests" />
-          <option value="tests.product_page.EditNewProduct" />
-          <option value=":allureReport" />
+          <option value="&quot;tests.report_page.layout_tests.*&quot;" />
+          <option value="allureReport" />
         </list>
       </option>
       <option name="vmOptions" />

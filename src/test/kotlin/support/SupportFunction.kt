@@ -87,10 +87,10 @@ private fun saveScreenshot(name: String, image: ByteArray): ByteArray {
     return image
 }
 
-fun mock(method: RequestMatcher.HttpMethod, methodUrl: String, mockResponse: String) {
+fun mock(mockName: String, method: RequestMatcher.HttpMethod, methodUrl: String, mockResponse: String) {
     Selenide.open()
     WebDriverRunner.getSelenideProxy().responseMocker().mockText(
-        "mock",
+        mockName,
         RequestMatchers.urlStartsWith(
             method,
             methodUrl

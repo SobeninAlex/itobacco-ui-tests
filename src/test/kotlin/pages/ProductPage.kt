@@ -37,21 +37,21 @@ class ProductPage(subURL: String) : MainPage(subURL) {
     fun boxGTIN() = element("[name='main.gtinCase']").`as`("Поле 'GTIN короба'")
     fun productionMode_DropDownList(): ElementsCollection {
         element("div[id='mui-component-select-main.productionMode']").`as`("Выпадающее меню 'Режим производства'").click()
-        return items_dropDownList()
+        return items_dropdown()
     }
     fun valueParameter_DropDownList(index: Int): ElementsCollection {
         valueParameterField(index).click()
-        return items_dropDownList()
+        return items_dropdown()
     }
     fun valueParameterField(index: Int): SelenideElement = element("div[id='mui-component-select-parameters.$index.value']").`as`("Выпадающее меню 'Значение параметра'(значение параметра шаблона пачки)")
     fun optionTemplateNameField(index: Int) = element("input[name='parameters.$index.variable']").`as`("Поле 'Параметр'(имя переменной шаблона пачки)")
     fun countryCode_DropDownList(): ElementsCollection {
         element("div[id='mui-component-select-main.countryCode']").`as`("Выпадающее меню 'Код страны'").click()
-        return items_dropDownList()
+        return items_dropdown()
     }
     fun factoryCode_DropDownList(): ElementsCollection {
         element("div[id='mui-component-select-main.factoryCode']").`as`("Выпадающее меню 'Код фабрики'").click()
-        return items_dropDownList()
+        return items_dropdown()
     }
     fun rskuField() = element("input[name='main.rsku']").`as`("Поле 'RSKU'")
     fun commentField() = element("input[name='main.comment']").`as`("Поле 'Комментарии'")

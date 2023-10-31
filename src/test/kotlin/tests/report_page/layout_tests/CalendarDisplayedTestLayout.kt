@@ -1,110 +1,79 @@
 package tests.report_page.layout_tests
 
 import com.codeborne.selenide.Condition
-import com.codeborne.selenide.Configuration
-import com.codeborne.selenide.Selenide
-import com.codeborne.selenide.WebDriverRunner
-import com.codeborne.selenide.proxy.RequestMatcher
+import com.codeborne.selenide.Selenide.elements
+import com.codeborne.selenide.Selenide.sleep
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Allure.step
 import io.qameta.allure.Epic
 import io.qameta.allure.Story
-import org.junit.jupiter.api.*
+import org.junit.jupiter.api.DisplayName
+import org.junit.jupiter.api.Test
+import org.junit.jupiter.api.TestInfo
 import pages.main_page.REPORT_PAGE
-import support.*
+import support.assertScreen
+import support.mocks.operational.MockReports
+import support.mocks.operational.MockReportsType
 import test_settings.TestBase
-import java.io.File
 
 @Epic("Тесты на страницу 'Отчеты'")
 @Story("Тесты на верстку")
-@DisplayName("Отображение календаря ипнута 'Дата от'/'Дата до' в сдйдбаре формирования отчета")
+@DisplayName("Отображение календаря ипнута 'Дата от'/'Дата до' при фильтрации по дате")
 class CalendarDisplayedTestLayout : TestBase() {
 
-    @BeforeEach
-    fun before() {
-        Configuration.proxyEnabled = true
-    }
-
-    @AfterEach
-    fun after() {
-        WebDriverRunner.getSelenideProxy().responseMocker().resetAll()
-        WebDriverRunner.getSelenideProxy().shutdown()
-    }
-
-    private val mockResponse = File("src/test/resources/mockResponse/operational_api_v1_reports.json").readText()
-    private val methodUrl = "http://itobacco-dev-03.k8s.renue.yc/operational/api/v1/reports?page=0&size=10&sort=createdAt,desc"
-
     @Test
-    @DisplayName("Отображение календаря ипнута 'Дата от' в сдйдбаре формирования отчета")
-    fun calendarToDateDisplayed(testInfo: TestInfo) {
-        mock(RequestMatcher.HttpMethod.GET, methodUrl, mockResponse)
+    @DisplayName("Отображение календаря ипнута 'Дата от' при фильтрации по дате")
+    fun calendarToDateDisplayedReports(testInfo: TestInfo) {
+        MockReports.mock()
+        MockReportsType.mock()
 
         REPORT_PAGE.apply {
             step("Переход на страницу 'Отчеты'", ThrowableRunnableVoid {
                 openPage()
-                Selenide.sleep(1000)
+                sleep(1000)
                 pageTitle().shouldBe(Condition.visible).shouldHave(Condition.text(reportPageTitle))
             })
 
-            step("Клик по [Сформировать]", ThrowableRunnableVoid {
-                create_Button().click()
-                sidebarTitle().shouldBe(Condition.visible).shouldHave(Condition.text(reportPageSidebarTitle))
-                sidebar().findAll(dateInputsSelector).forEach { it.shouldBe(Condition.visible) }
-            })
-
-            step("Выбираем тип отчета", ThrowableRunnableVoid {
-                typeReport_DropDownList().find(Condition.text(typeReport_OrderReport)).click()
-            })
-
-            step("Устанавливаем дату 'ОТ' больше даты 'ДО'", ThrowableRunnableVoid {
-                sidebar().findAll(dateInputsSelector)[0].`as`("Дата 'ОТ'").editField("01052023")
-                sidebar().findAll(dateInputsSelector)[1].`as`("Дата 'ДО'").editField("30052023")
+            step("Устанавливаем дату 'ОТ' и дату 'ДО'", ThrowableRunnableVoid {
+                elements(dateInputsSelector).first().`as`("Дата ОТ").setValue("01052023")
+                elements(dateInputsSelector).last().`as`("Дата ДО").setValue("30052023")
             })
 
             step("Клик по иконке календаря инпута 'Дата от'", ThrowableRunnableVoid {
-                sidebar().findAll(calendarIcon).first().click()
+                elements(calendarIconSelector).first().`as`("Иконка календаря в инпуте 'Дата от'").click()
             })
 
             step("Съемка скрина. Сравнение ожидаемого и фактического", ThrowableRunnableVoid {
-                Selenide.sleep(500)
+                sleep(500)
                 assertScreen(testInfo)
             })
         }
     }
 
     @Test
-    @DisplayName("Отображение календаря ипнута 'Дата до' в сдйдбаре формирования отчета")
-    fun calendarFromDateDisplayed(testInfo: TestInfo) {
-        mock(RequestMatcher.HttpMethod.GET, methodUrl, mockResponse)
+    @DisplayName("Отображение календаря ипнута 'Дата до' при фильтрации по дате")
+    fun calendarFromDateDisplayedReports(testInfo: TestInfo) {
+        MockReports.mock()
+        MockReportsType.mock()
 
         REPORT_PAGE.apply {
             step("Переход на страницу 'Отчеты'", ThrowableRunnableVoid {
                 openPage()
-                Selenide.sleep(1000)
+                sleep(1000)
                 pageTitle().shouldBe(Condition.visible).shouldHave(Condition.text(reportPageTitle))
             })
 
-            step("Клик по [Сформировать]", ThrowableRunnableVoid {
-                create_Button().click()
-                sidebarTitle().shouldBe(Condition.visible).shouldHave(Condition.text(reportPageSidebarTitle))
-                sidebar().findAll(dateInputsSelector).forEach { it.shouldBe(Condition.visible) }
+            step("Устанавливаем дату 'ОТ' и дату 'ДО'", ThrowableRunnableVoid {
+                elements(dateInputsSelector).first().`as`("Дата ОТ").setValue("01052023")
+                elements(dateInputsSelector).last().`as`("Дата ДО").setValue("30052023")
             })
 
-            step("Выбираем тип отчета", ThrowableRunnableVoid {
-                typeReport_DropDownList().find(Condition.text(typeReport_OrderReport)).click()
-            })
-
-            step("Устанавливаем дату 'ОТ' больше даты 'ДО'", ThrowableRunnableVoid {
-                sidebar().findAll(dateInputsSelector)[0].`as`("Дата 'ОТ'").editField("01052023")
-                sidebar().findAll(dateInputsSelector)[1].`as`("Дата 'ДО'").editField("30052023")
-            })
-
-            step("Клик по иконке календаря инпута 'Дата до'", ThrowableRunnableVoid {
-                sidebar().findAll(calendarIcon).last().click()
+            step("Клик по иконке календаря инпута 'Дата от'", ThrowableRunnableVoid {
+                elements(calendarIconSelector).last().`as`("Иконка календаря в инпуте 'Дата до'").click()
             })
 
             step("Съемка скрина. Сравнение ожидаемого и фактического", ThrowableRunnableVoid {
-                Selenide.sleep(500)
+                sleep(500)
                 assertScreen(testInfo)
             })
         }
