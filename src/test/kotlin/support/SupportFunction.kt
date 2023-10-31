@@ -12,14 +12,12 @@ import com.github.romankh3.image.comparison.model.ImageComparisonState
 import io.qameta.allure.Attachment
 import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.TestInfo
-import org.openqa.selenium.By.ByXPath
 import org.openqa.selenium.Keys
 import org.openqa.selenium.OutputType
 import java.io.File
 import java.io.IOException
 import java.nio.file.Files
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
+import java.util.regex.Pattern
 
 //возвращает рандомную, латинскую, буквенную строку заданной длины
 fun randomAlphabetic(length: Int): String {
@@ -87,13 +85,13 @@ private fun saveScreenshot(name: String, image: ByteArray): ByteArray {
     return image
 }
 
-fun mock(mockName: String, method: RequestMatcher.HttpMethod, methodUrl: String, mockResponse: String) {
+fun mock(mockName: String, method: RequestMatcher.HttpMethod, urlRegex: Pattern, response: String) {
     Selenide.open()
     WebDriverRunner.getSelenideProxy().responseMocker().mockText(
         mockName,
-        RequestMatchers.urlStartsWith(
+        RequestMatchers.urlMatches(
             method,
-            methodUrl
+            urlRegex
         )
-    ) { mockResponse }
+    ) { response }
 }

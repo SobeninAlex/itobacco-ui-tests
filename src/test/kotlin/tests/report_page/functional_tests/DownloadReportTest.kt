@@ -11,5 +11,4 @@ import test_settings.TestBase
 @Story("Функциональные тесты")
 class DownloadReportTest : TestBase() {
 
-
 }

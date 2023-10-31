@@ -33,14 +33,14 @@ class NameChecksTest : TestBase() {
             })
 
             step("Проверка: названия проверок совпадают с эталонными", ThrowableRunnableVoid {
-                for ((index, element) in listItems_List().withIndex()) {
-                    element.find(nameCheckedLocator).shouldHave(Condition.text(nameChecksList[index]))
+                for ((index, element) in listItems_list().withIndex()) {
+                    element.find(nameChecked_locator).shouldHave(Condition.text(nameChecksList[index]))
                 }
             })
 
             step("Проверка: описания проверок совпадают с эталонными", ThrowableRunnableVoid {
-                for ((index, element) in listItems_List().withIndex()) {
-                    element.find(descriptionChecksLocator).shouldHave(Condition.text(descriptionChecksList[index]))
+                for ((index, element) in listItems_list().withIndex()) {
+                    element.find(descriptionChecks_locator).shouldHave(Condition.text(descriptionChecksList[index]))
                 }
             })
         }

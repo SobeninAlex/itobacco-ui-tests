@@ -11,8 +11,8 @@ import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.TestInfo
 import pages.main_page.REPORT_PAGE
 import support.assertScreen
-import support.mocks.operational.MockReports
-import support.mocks.operational.MockReportsType
+import mocks.operational.MockReports
+import mocks.operational.MockReportsType
 import test_settings.TestBase
 
 @Epic("Тесты на страницу 'Отчеты'")

@@ -16,8 +16,8 @@ import support.assertScreen
 import support.dateNow
 import support.editField
 import support.formatter
-import support.mocks.operational.MockReports
-import support.mocks.operational.MockReportsType
+import mocks.operational.MockReports
+import mocks.operational.MockReportsType
 import test_settings.TestBase
 
 @Epic("Тесты на страницу 'Отчеты'")

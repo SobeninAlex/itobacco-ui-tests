@@ -27,12 +27,12 @@ class AuthorizationSuccessTest : TestBase() {
             })
 
             step("Заполнение формы авторизации", ThrowableRunnableVoid {
-                loginField().value = loginOrPassword
-                passwordField().value = loginOrPassword
+                login_field().value = loginOrPassword
+                password_field().value = loginOrPassword
             })
 
             step("Клик [Войти]", ThrowableRunnableVoid {
-                enterButton().click()
+                enter_button().click()
             })
         }
         with(ORDER_PAGE) {

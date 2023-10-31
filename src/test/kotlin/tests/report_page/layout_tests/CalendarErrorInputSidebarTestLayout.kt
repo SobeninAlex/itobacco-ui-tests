@@ -10,8 +10,8 @@ import io.qameta.allure.Story
 import org.junit.jupiter.api.*
 import pages.main_page.REPORT_PAGE
 import support.*
-import support.mocks.operational.MockReports
-import support.mocks.operational.MockReportsType
+import mocks.operational.MockReports
+import mocks.operational.MockReportsType
 import test_settings.TestBase
 
 @Epic("Тесты на страницу 'Отчеты'")
@@ -33,7 +33,7 @@ class CalendarErrorInputSidebarTestLayout : TestBase() {
             })
 
             step("Клик по [Сформировать]", ThrowableRunnableVoid {
-                create_Button().click()
+                create_button().click()
                 sidebarTitle().shouldBe(Condition.visible).shouldHave(Condition.text(reportPageSidebarTitle))
                 sidebar().findAll(dateInputsSelector).forEach { it.shouldBe(Condition.visible) }
             })
@@ -48,7 +48,7 @@ class CalendarErrorInputSidebarTestLayout : TestBase() {
             })
 
             step("Клик по [Cкачать отчет]", ThrowableRunnableVoid {
-                submit_Button().click()
+                submit_button().click()
                 executeJavaScript<Any>("document.querySelectorAll(\"form input[type]\").forEach(el => el.style.visibility='hidden')")
             })
 

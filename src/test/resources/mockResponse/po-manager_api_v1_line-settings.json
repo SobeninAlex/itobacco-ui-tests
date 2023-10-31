@@ -1,0 +1,44 @@
+{
+  "dto": [
+    {
+      "code": "0V1",
+      "number": 1,
+      "description": "Описание1",
+      "productionRate": 10,
+      "printerAdapterConnectionString": "http://printer-adapter.itobacco-dev-03.svc.cluster.local:8081/",
+      "printerAdapterApiVersion": null,
+      "queueName": "itobacco_line_1_topic_GvyBje",
+      "rejectionRatePacks": 10,
+      "rejectionRateBlocks": 10,
+      "testModeEnabled": true,
+      "terminalConnectionString": "192.168.3.1"
+    },
+    {
+      "code": "0V2",
+      "number": 2,
+      "description": "Тестовая линия(не работает)",
+      "productionRate": 1,
+      "printerAdapterConnectionString": "http://printer-adapter.itobacco-dev-02.svc.cluster.local:8081/",
+      "printerAdapterApiVersion": null,
+      "queueName": "itobacco_line_2_topic",
+      "rejectionRatePacks": 10,
+      "rejectionRateBlocks": 10,
+      "testModeEnabled": false,
+      "terminalConnectionString": "10.240.0.198"
+    },
+    {
+      "code": "T0V3",
+      "number": 3,
+      "description": "фвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвфвфвыфвффвфцвфвфв",
+      "productionRate": 1,
+      "printerAdapterConnectionString": "http://printer-adapter.itobacco-dev-02.svc.cluster.local:8081/",
+      "printerAdapterApiVersion": null,
+      "queueName": "itobacco_line_3_topic_RjtfBx",
+      "rejectionRatePacks": 10,
+      "rejectionRateBlocks": 10,
+      "testModeEnabled": false,
+      "terminalConnectionString": "10.240.0.192"
+    }
+  ],
+  "count": 3
+}

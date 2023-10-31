@@ -2,12 +2,14 @@ package pages
 
 import com.codeborne.selenide.Condition
 import com.codeborne.selenide.Selenide.*
+import org.openqa.selenium.By
+import org.openqa.selenium.By.cssSelector
 import pages.main_page.MainPage
 
 class ChecksPage(subURL: String) : MainPage(subURL) {
 
-    val nameCheckedLocator = "td:nth-of-type(1)"
-    val descriptionChecksLocator = "td:nth-of-type(2)"
+    val nameChecked_locator: By = cssSelector("td:nth-of-type(1)")
+    val descriptionChecks_locator: By = cssSelector("td:nth-of-type(2)")
 
     val checksPageTitle = "Проверки произведенной продукции"
 

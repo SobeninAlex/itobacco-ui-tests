@@ -3,6 +3,7 @@ package tests.authorization_page
 import com.codeborne.selenide.Condition
 import io.qameta.allure.Allure
 import io.qameta.allure.Allure.ThrowableRunnableVoid
+import io.qameta.allure.Allure.step
 import io.qameta.allure.Epic
 import io.qameta.allure.Story
 import org.junit.jupiter.api.DisplayName
@@ -19,26 +20,26 @@ class AuthorizationErrorTest : TestBase() {
     @DisplayName("Ошибка авторизации")
     fun loginError() {
         with(AUTHORIZATION_PAGE) {
-            Allure.step("Переход на страницу авторизации", ThrowableRunnableVoid {
+            step("Переход на страницу авторизации", ThrowableRunnableVoid {
                 openPage()
             })
 
-            Allure.step("Заполнение формы авторизации не валидными значениями", ThrowableRunnableVoid {
-                loginField().value = "$loginOrPassword error"
-                passwordField().value = "$loginOrPassword error"
+            step("Заполнение формы авторизации не валидными значениями", ThrowableRunnableVoid {
+                login_field().value = "$loginOrPassword error"
+                password_field().value = "$loginOrPassword error"
             })
 
-            Allure.step("Клик [Войти]", ThrowableRunnableVoid {
-                enterButton().click()
+            step("Клик [Войти]", ThrowableRunnableVoid {
+                enter_button().click()
             })
 
-            Allure.step("Проверка: отобразилось сообщение об ошибке", ThrowableRunnableVoid {
+            step("Проверка: отобразилось сообщение об ошибке", ThrowableRunnableVoid {
                 errorMessage().shouldBe(Condition.visible)
             })
 
-            Allure.step("Проверка: поля 'Логин' и 'Пароль' выделены красной рамкой", ThrowableRunnableVoid {
-                loginField().shouldHave(Condition.attribute("aria-invalid", "true"))
-                passwordField().shouldHave(Condition.attribute("aria-invalid", "true"))
+            step("Проверка: поля 'Логин' и 'Пароль' выделены красной рамкой", ThrowableRunnableVoid {
+                login_field().shouldHave(Condition.attribute("aria-invalid", "true"))
+                password_field().shouldHave(Condition.attribute("aria-invalid", "true"))
             })
         }
     }
