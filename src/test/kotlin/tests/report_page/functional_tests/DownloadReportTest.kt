@@ -11,12 +11,5 @@ import test_settings.TestBase
 @Story("Функциональные тесты")
 class DownloadReportTest : TestBase() {
 
-    @Test
-    fun test() {
-        REPORT_PAGE.openPage()
-        sleep(100)
-        sleep(100)
-        sleep(100)
-    }
 
 }

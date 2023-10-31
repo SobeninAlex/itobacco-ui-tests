@@ -85,6 +85,7 @@ class CreateNewProductTest : TestBase() {
 
             step("Клик по [Сохранить]", ThrowableRunnableVoid {
                 submit_Button().click()
+//                cancel_Button().click() //TODO
             })
 
             step("Используем поле 'Поиск' -> Поиск только что созданного продукта -> Проверка атрибутов продукта", ThrowableRunnableVoid {
