@@ -22,12 +22,12 @@ jobs:
         with:
           name: testReport
           path: build
-  report:
-    needs: test
-    runs-on: ubuntu-latest
-    steps:
-      - name: get build
-        uses: actions/download-artifact@v3
-        with:
-          name: testReport
+  # report:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: get build
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: testReport
       
