@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="add more mock">
+    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="update yml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/lines_page/AddNewLineTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/lines_page/AddNewLineTest.kt" afterDir="false" />
@@ -46,7 +47,6 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="Kotlin File" />
-        <option value="Kotlin Object" />
         <option value="Kotlin Class" />
       </list>
     </option>
@@ -68,47 +68,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;layout-tests&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/soben/Desktop/itobacco-ui-tests&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "task-2",
+    "last_opened_file_path": "C:/Users/soben/Desktop/QualityAssurance",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\kotlin\support\mocks\po_manager" />
-      <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\resources\screens" />
-      <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\kotlin\support\mocks\operational" />
-      <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\kotlin\support\mocks" />
-      <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\resources\body" />
+      <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\kotlin\pages\main_page" />
+      <recent name="C:\Users\soben\Desktop\itobacco-ui-tests\src\test\kotlin\support" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
-      <recent name="pages" />
-      <recent name="support" />
       <recent name="pages.main_page" />
       <recent name="tests.authorization_page" />
       <recent name="test_settings.services" />
+      <recent name="tests.authorization_page.functional_tests" />
+      <recent name="tests.authorization_page_tests" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.CreateNewProductTest">
-    <configuration name="CalendarDisplayedSidebarTestLayout.calendarToDateDisplayedSidebarReports" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.NameCheck.nameCheck">
+    <configuration name="AuthorizationError.loginError" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -121,7 +118,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.report_page.layout_tests.CalendarDisplayedSidebarTestLayout.calendarToDateDisplayedSidebarReports&quot;" />
+            <option value="&quot;tests.authorization_page.AuthorizationError.loginError&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -132,7 +129,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CalendarDisplayedTestLayout.calendarToDateDisplayedReports" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="CheckClickableToggles.checkClickableToggles" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -145,7 +142,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.report_page.layout_tests.CalendarDisplayedTestLayout.calendarToDateDisplayedReports&quot;" />
+            <option value="&quot;tests.checks_page.CheckClickableToggles.checkClickableToggles&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -156,7 +153,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="CreateNewProductTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="NameCheck.nameCheck" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -169,7 +166,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.product_page.CreateNewProductTest&quot;" />
+            <option value="&quot;tests.checks_page.NameCheck.nameCheck&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -180,7 +177,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="EditNewProductTest.editNewProduct" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -193,7 +190,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.product_page.EditNewProductTest.editNewProduct&quot;" />
+            <option value="&quot;tests.checks_page.Test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -204,7 +201,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="ExampleNewAuth.demo" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="Test.test" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -217,7 +214,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;tests.example.ExampleNewAuth.demo&quot;" />
+            <option value="&quot;tests.checks_page.Test.test&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -246,20 +243,20 @@
     <list>
       <item itemvalue="Gradle.debug_test_report" />
       <item itemvalue="Gradle.allTestsRun_generateReport" />
-      <item itemvalue="Gradle.CalendarDisplayedTestLayout.calendarToDateDisplayedReports" />
-      <item itemvalue="Gradle.EditNewProductTest.editNewProduct" />
-      <item itemvalue="Gradle.CreateNewProductTest" />
-      <item itemvalue="Gradle.ExampleNewAuth.demo" />
-      <item itemvalue="Gradle.CalendarDisplayedSidebarTestLayout.calendarToDateDisplayedSidebarReports" />
+      <item itemvalue="Gradle.CheckClickableToggles.checkClickableToggles" />
+      <item itemvalue="Gradle.NameCheck.nameCheck" />
+      <item itemvalue="Gradle.AuthorizationError.loginError" />
+      <item itemvalue="Gradle.Test" />
+      <item itemvalue="Gradle.Test.test" />
       <item itemvalue="JUnit.start-all-tests" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.CreateNewProductTest" />
-        <item itemvalue="Gradle.CalendarDisplayedTestLayout.calendarToDateDisplayedReports" />
-        <item itemvalue="Gradle.EditNewProductTest.editNewProduct" />
-        <item itemvalue="Gradle.CalendarDisplayedSidebarTestLayout.calendarToDateDisplayedSidebarReports" />
-        <item itemvalue="Gradle.ExampleNewAuth.demo" />
+        <item itemvalue="Gradle.NameCheck.nameCheck" />
+        <item itemvalue="Gradle.CheckClickableToggles.checkClickableToggles" />
+        <item itemvalue="Gradle.Test.test" />
+        <item itemvalue="Gradle.AuthorizationError.loginError" />
+        <item itemvalue="Gradle.Test" />
       </list>
     </recent_temporary>
   </component>
@@ -292,31 +289,7 @@
       <workItem from="1698145011909" duration="6300000" />
       <workItem from="1698211131783" duration="17837000" />
       <workItem from="1698245578107" duration="1990000" />
-      <workItem from="1698248209112" duration="9072000" />
-      <workItem from="1698297450618" duration="408000" />
-      <workItem from="1698297901130" duration="21793000" />
-      <workItem from="1698409666127" duration="4830000" />
-      <workItem from="1698414560408" duration="1501000" />
-      <workItem from="1698432550886" duration="11154000" />
-      <workItem from="1698481535657" duration="13649000" />
-      <workItem from="1698503518026" duration="2507000" />
-      <workItem from="1698506428435" duration="348000" />
-      <workItem from="1698514459536" duration="7447000" />
-      <workItem from="1698522930088" duration="5045000" />
-      <workItem from="1698527995571" duration="885000" />
-      <workItem from="1698559010489" duration="2194000" />
-      <workItem from="1698642441420" duration="12029000" />
-      <workItem from="1698668107707" duration="2224000" />
-      <workItem from="1698730726700" duration="6150000" />
-      <workItem from="1698736989987" duration="13686000" />
-      <workItem from="1698779755673" duration="8094000" />
-      <workItem from="1698814982040" duration="815000" />
-      <workItem from="1698821322896" duration="16000" />
-      <workItem from="1698827331256" duration="4602000" />
-      <workItem from="1698833760576" duration="1951000" />
-      <workItem from="1698836569096" duration="2721000" />
-      <workItem from="1698906017559" duration="2374000" />
-      <workItem from="1698920946113" duration="78000" />
+      <workItem from="1698248209112" duration="8271000" />
     </task>
     <task id="LOCAL-00001" summary="end">
       <option name="closed" value="true" />
@@ -358,71 +331,7 @@
       <option name="project" value="LOCAL" />
       <updated>1698152954634</updated>
     </task>
-    <task id="LOCAL-00006" summary="add test on checks page">
-      <option name="closed" value="true" />
-      <created>1698256519782</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1698256519782</updated>
-    </task>
-    <task id="LOCAL-00007" summary="add test on checks page">
-      <option name="closed" value="true" />
-      <created>1698256570870</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1698256570870</updated>
-    </task>
-    <task id="LOCAL-00008" summary="add test on checks page">
-      <option name="closed" value="true" />
-      <created>1698256621361</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1698256621361</updated>
-    </task>
-    <task id="LOCAL-00009" summary="add layout test on report page">
-      <option name="closed" value="true" />
-      <created>1698416007925</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1698416007925</updated>
-    </task>
-    <task id="LOCAL-00010" summary="add Mock">
-      <option name="closed" value="true" />
-      <created>1698528853380</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1698528853380</updated>
-    </task>
-    <task id="LOCAL-00011" summary="- add mock&#10;- add layout tests on report page">
-      <option name="closed" value="true" />
-      <created>1698658367064</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1698658367064</updated>
-    </task>
-    <task id="LOCAL-00012" summary="update mock">
-      <option name="closed" value="true" />
-      <created>1698750858206</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1698750858206</updated>
-    </task>
-    <task id="LOCAL-00013" summary="tests end">
-      <option name="closed" value="true" />
-      <created>1698758584809</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1698758584809</updated>
-    </task>
-    <option name="localTasksCounter" value="14" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,38 +353,6 @@
     <MESSAGE value="add EditNewProduct test" />
     <MESSAGE value="finish test edit new product" />
     <MESSAGE value="add MainPage" />
-    <MESSAGE value="add test on checks page" />
-    <MESSAGE value="add layout test on report page" />
-    <MESSAGE value="add Mock" />
-    <MESSAGE value="- add mock&#10;- add layout tests on report page" />
-    <MESSAGE value="update mock" />
-    <MESSAGE value="tests end" />
-    <option name="LAST_COMMIT_MESSAGE" value="tests end" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/test/kotlin/tests/product_page/EditNewProductTest.kt</url>
-          <line>127</line>
-          <option name="timeStamp" value="19" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/test/kotlin/tests/lines_page/AddNewLineTest.kt</url>
-          <line>37</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/test/kotlin/tests/example/ExampleNewAuth.kt</url>
-          <line>41</line>
-          <option name="timeStamp" value="24" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/test/kotlin/tests/example/ExampleNewAuth.kt</url>
-          <line>42</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <option name="LAST_COMMIT_MESSAGE" value="add MainPage" />
   </component>
 </project>

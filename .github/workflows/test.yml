@@ -1,0 +1,33 @@
+name: Test
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: get repo
+        uses: actions/checkout@v3
+      - name: install
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'oracle'
+          java-version: '17'
+      - name: setup gardle
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: release-candidate
+      - name: test
+        run: gradle allureReport
+      - name: upload artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: testReport
+          path: build
+  # report:
+  #   needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: get build
+  #       uses: actions/download-artifact@v3
+  #       with:
+  #         name: testReport
+      
