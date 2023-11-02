@@ -38,7 +38,6 @@ class DropdownReportsTypeDisplayedTestLayout : TestBase() {
             })
 
             step("Съемка скрина. Сравнение ожидаемого и фактического", ThrowableRunnableVoid {
-                Selenide.sleep(500)
                 assertScreen(testInfo)
             })
         }

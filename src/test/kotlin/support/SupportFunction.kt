@@ -44,6 +44,7 @@ fun SelenideElement.editField(newValue: String) {
 
 //метод для скрина и сравнения эталонного и фактического скриншота
 fun assertScreen(testInfo: TestInfo) {
+    Selenide.sleep(700)
     val expectedFileName = testInfo.testMethod.get().name + ".png"
     val expectedScreensDir = "src/test/resources/screens/"
 

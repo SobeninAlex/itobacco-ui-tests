@@ -51,7 +51,6 @@ class CalendarDisplayedSidebarTestLayout : TestBase() {
             })
 
             step("Съемка скрина. Сравнение ожидаемого и фактического", ThrowableRunnableVoid {
-                sleep(500)
                 assertScreen(testInfo)
             })
         }
