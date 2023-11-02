@@ -1,0 +1,30 @@
+[
+  {
+    "refReportId": 1,
+    "reportName": "Отчет по использованию",
+    "method": "POST /operational/api/v1/marking-codes-report",
+    "dateFilterEnable": true,
+    "reportNameEng": "Usage report"
+  },
+  {
+    "refReportId": 2,
+    "reportName": "Отчет по продукции",
+    "method": "POST /operational/api/v1/products-report",
+    "dateFilterEnable": false,
+    "reportNameEng": "Order report"
+  },
+  {
+    "refReportId": 3,
+    "reportName": "Отчет по заказам",
+    "method": "POST /operational/api/v1/orders-report",
+    "dateFilterEnable": true,
+    "reportNameEng": "Product report"
+  },
+  {
+    "refReportId": 4,
+    "reportName": "Отчет о списании",
+    "method": "POST /operational/api/v1/marking-codes-report",
+    "dateFilterEnable": true,
+    "reportNameEng": "WriteOff report"
+  }
+]

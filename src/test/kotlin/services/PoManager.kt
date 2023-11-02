@@ -16,7 +16,7 @@ class PoManager : SettingsService() {
     }
 
     fun createNewProduct(productRSKU: String, nameProduct: String) {
-        val json = JSONObject(File("src/test/resources/create_new_product.json").readText())
+        val json = JSONObject(File("src/test/resources/body/create_new_product.json").readText())
             .put("id", productRSKU)
             .put("productFullName", nameProduct)
             .toString()

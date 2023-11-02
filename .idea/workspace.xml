@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+    <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="add more mock">
     <list default="true" id="c793cad5-1a50-454f-a88c-a2e417c0f33c" name="Changes" comment="update yml">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/support/SupportFunction.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/lines_page/AddNewLineTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/lines_page/AddNewLineTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarDisplayedSidebarTestLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarDisplayedSidebarTestLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarDisplayedTestLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarDisplayedTestLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputSidebarTestLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputSidebarTestLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputTestLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/CalendarErrorInputTestLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/DropdownReportsTypeDisplayedSidebarTestLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/DropdownReportsTypeDisplayedSidebarTestLayout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/DropdownReportsTypeDisplayedTestLayout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/tests/report_page/layout_tests/DropdownReportsTypeDisplayedTestLayout.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,24 +54,10 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="layout-tests" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "SobeninAlex"
-  }
-}]]></component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="ebea8be6-a975-405f-9f06-457a23604d30" />
-        <option name="url" value="https://github.com/SobeninAlex/itobacco-ui-tests.git" />
-      </UrlAndAccount>
-    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -79,7 +74,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "task-2",
     "last_opened_file_path": "C:/Users/soben/Desktop/QualityAssurance",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -336,15 +331,7 @@
       <option name="project" value="LOCAL" />
       <updated>1698152954634</updated>
     </task>
-    <task id="LOCAL-00006" summary="update yml">
-      <option name="closed" value="true" />
-      <created>1698756610436</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1698756610436</updated>
-    </task>
-    <option name="localTasksCounter" value="7" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +353,6 @@
     <MESSAGE value="add EditNewProduct test" />
     <MESSAGE value="finish test edit new product" />
     <MESSAGE value="add MainPage" />
-    <MESSAGE value="update yml" />
-    <option name="LAST_COMMIT_MESSAGE" value="update yml" />
+    <option name="LAST_COMMIT_MESSAGE" value="add MainPage" />
   </component>
 </project>

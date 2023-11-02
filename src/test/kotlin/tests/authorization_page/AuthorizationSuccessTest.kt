@@ -6,6 +6,7 @@ import com.codeborne.selenide.WebDriverConditions.url
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Allure.step
 import io.qameta.allure.Epic
+import io.qameta.allure.Story
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import pages.main_page.AUTHORIZATION_PAGE
@@ -13,8 +14,9 @@ import pages.main_page.ORDER_PAGE
 import test_settings.TestBase
 
 @Epic("Тесты на авторизацию в системе iTobacco")
+@Story("Функциональные тесты")
 @DisplayName("Успешная авторизации")
-class AuthorizationSuccess : TestBase() {
+class AuthorizationSuccessTest : TestBase() {
 
     @Test
     @DisplayName("Успешная авторизация")
@@ -25,12 +27,12 @@ class AuthorizationSuccess : TestBase() {
             })
 
             step("Заполнение формы авторизации", ThrowableRunnableVoid {
-                loginField().value = loginOrPassword
-                passwordField().value = loginOrPassword
+                login_field().value = loginOrPassword
+                password_field().value = loginOrPassword
             })
 
             step("Клик [Войти]", ThrowableRunnableVoid {
-                enterButton().click()
+                enter_button().click()
             })
         }
         with(ORDER_PAGE) {

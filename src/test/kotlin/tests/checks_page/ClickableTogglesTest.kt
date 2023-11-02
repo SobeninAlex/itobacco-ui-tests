@@ -5,6 +5,7 @@ import com.codeborne.selenide.Selenide.*
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Allure.step
 import io.qameta.allure.Epic
+import io.qameta.allure.Story
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.openqa.selenium.By
@@ -12,8 +13,9 @@ import pages.main_page.CHECKS_PAGE
 import test_settings.TestBase
 
 @Epic("Тесты на страницу 'Проверки производственно продукции'")
+@Story("Функциональные тесты")
 @DisplayName("Кликабельность тогглов")
-class CheckClickableToggles : TestBase() {
+class ClickableTogglesTest : TestBase() {
 
     @Test
     @DisplayName("Кликабельность тогглов")

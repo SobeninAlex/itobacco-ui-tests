@@ -2,9 +2,11 @@ package tests.product_page
 
 import com.codeborne.selenide.CollectionCondition
 import com.codeborne.selenide.Condition.*
+import com.codeborne.selenide.Selenide.sleep
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Allure.step
 import io.qameta.allure.Epic
+import io.qameta.allure.Story
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
@@ -14,8 +16,9 @@ import support.*
 import test_settings.TestBase
 
 @Epic("Тесты на страницу 'Продукция'")
+@Story("Функциональные тесты")
 @DisplayName("Успешное создание новой продукции")
-class CreateNewProduct : TestBase() {
+class CreateNewProductTest : TestBase() {
 
     @Test
     @DisplayName("Успешное создание новой продукции")
@@ -23,69 +26,71 @@ class CreateNewProduct : TestBase() {
         with(PRODUCT_PAGE) {
             step("Переход на страницу 'Продукция'", ThrowableRunnableVoid {
                 openPage()
+                sleep(1000)
                 pageTitle().shouldBe(visible).shouldHave(text(orderPageTitle))
             })
 
             step("Клик по [Создать]", ThrowableRunnableVoid {
-                createButton().click()
+                create_button().click()
                 sidebarTitle().shouldBe(visible).shouldHave(text(orderPageSidebarTitle))
-                saveButton().shouldBe(disabled)
+                submit_button().shouldBe(disabled)
             })
 
             step("Заполнение вкладки 'Атрибуты'", ThrowableRunnableVoid {
-                nameProductField().setValue(nameProduct)
-                rskuField().setValue(RSKU)
-                lskuField().setValue("0$RSKU")
-                nameServiceField().setValue(nameService)
-                factoryCodeSelector().find(text(factoryCode)).click()
-                mrpField().setValue(mrp)
-                countryCodeSelector().find(text(countryCode)).click()
-                commentField().setValue(comment)
-                productionModeSelector().find(text(productionMode)).click()
-                packGTIN().value = packGTIN
-                blockGTIN().value = blockGTIN
-                boxGTIN().value = boxGTIN
+                nameProduct_field().setValue(nameProduct)
+                RSKU_field().setValue(RSKU)
+                LSKU_field().setValue("0$RSKU")
+                nameService_field().setValue(nameService)
+                factoryCode_dropdown().find(text(factoryCode)).click()
+                MRP_field().setValue(mrp)
+                countryCode_dropdown().find(text(countryCode)).click()
+                comment_field().setValue(comment)
+                productionMode_dropdown().find(text(productionMode)).click()
+                packGTIN_field().value = packGTIN
+                blockGTIN_field().value = blockGTIN
+                boxGTIN_field().value = boxGTIN
                 aggregation("20", "10", "31", "10", "20")
             })
 
             step("Клик по вкладке 'Шаблоны печати' -> Заполнение", ThrowableRunnableVoid {
-                templatePrintTab().click()
-                packTemplateField().setValue(packTemplate)
-                stickerBlockTemplateField().setValue(template)
-                stickerBlockImageField().setValue(bitmap)
-                firstStickerBoxTemplateField().setValue(template)
-                firstStickerBoxImageField().setValue(bitmap)
-                secondStickerBoxTemplateField().setValue(template)
-                secondStickerBoxImageField().setValue(bitmap)
+                templatePrint_tab().click()
+                packTemplate_field().setValue(packTemplate)
+                stickerBlockTemplate_field().setValue(template)
+                stickerBlockImage_field().setValue(bitmap)
+                firstStickerBoxTemplate_field().setValue(template)
+                firstStickerBoxImage_field().setValue(bitmap)
+                secondStickerBoxTemplate_field().setValue(template)
+                secondStickerBoxImage_field().setValue(bitmap)
             })
 
             step("Клик по вкладке 'Текстовые переменные' -> Скролл до последнего элемента", ThrowableRunnableVoid {
-                textVariablesTab().click()
-                testVariablesList().last().`as`("Последнее поле ввода 'Текстовые переменные'").scrollIntoView(true)
+                textVariables_tab().click()
+                textVariables_listFields().last().`as`("Последнее поле ввода 'Текстовые переменные'").scrollIntoView(true)
             })
 
             step("Клик по вкладке 'Параметры шаблона' -> Добавление и удаление параметров", ThrowableRunnableVoid{
-                optionsTemplateTab().click()
-                addOptionButton().click()
-                valueOptionSelector(0).find(text(valueOption_Date_LineCode)).click()
+                parametersTemplate_tab().click()
+                addParameter_button().click()
+                valueParameter_dropdown(0).find(text(valueOption_DateLineCode)).click()
                 repeat(5) {
-                    addOptionButton().click()
+                    addParameter_button().click()
                 }
                 repeat(6) {
-                    deleteOptionButton().click()
+                    deleteParameter_button().click()
                 }
             })
 
             step("Клик по [Сохранить]", ThrowableRunnableVoid {
-                saveButton().click()
+                submit_button().click()
+//                cancel_Button().click() //TODO
             })
 
             step("Используем поле 'Поиск' -> Поиск только что созданного продукта -> Проверка атрибутов продукта", ThrowableRunnableVoid {
-                searchField().setValue(RSKU)
-                listItems()
+                search_field().setValue(RSKU)
+                listItems_list()
                     .shouldBe(CollectionCondition.size(1))
 
-                val listAtr = listItems()[0].findAll("td")
+                val listAtr = listItems_list()[0].findAll("td")
                 listAtr[0].`as`("RSKU").shouldHave(text(RSKU))
                 listAtr[1].`as`("Наименование").shouldHave(text(nameProduct))
                 listAtr[2].`as`("Режим пр-ва").shouldHave(text(productionMode))
