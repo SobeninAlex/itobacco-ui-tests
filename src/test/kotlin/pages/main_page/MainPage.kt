@@ -12,7 +12,7 @@ open class MainPage(val subURL: String) {
     val dateInputsSelector: By = cssSelector("input[type='tel']")
     val calendarIconSelector: By = cssSelector("button[aria-label^='Choose date']")
     fun pageTitle() = element("h1").`as`("Заголовок страницы")
-    protected fun items_dropdown() = Selenide.elements("li[class]").`as`("Список элементов выпадающего списка")
+    protected fun items_dropdown() = Selenide.elements("li[class]").`as`("Элементы выпадающего списка")
     fun listItems_list() = Selenide.elements("tbody tr").`as`("Список элементов")
     fun search_field() = element(xpath("//label/following-sibling::div/input[@type='text']")).`as`("Поле 'Поиск'")
     fun create_button() = element("a.MuiButton-contained").`as`("Кнопка создания сущности [Создать]/[Добавить]/[Сформировать]")
