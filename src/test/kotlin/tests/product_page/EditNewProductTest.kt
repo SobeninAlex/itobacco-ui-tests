@@ -1,5 +1,6 @@
 package tests.product_page
 
+import com.codeborne.selenide.CollectionCondition
 import com.codeborne.selenide.Condition.*
 import com.codeborne.selenide.Selenide.sleep
 import io.qameta.allure.Allure.ThrowableRunnableVoid
@@ -51,8 +52,9 @@ class EditNewProductTest : TestBase() {
 
             step("Поиск продукцию по RSKU -> клик по найденной продукции", ThrowableRunnableVoid {
                 search_field().setValue(RSKU)
+                listItems_list().shouldBe(CollectionCondition.size(1))
 
-                listItems_list()[0]
+                listItems_list().first()
                     .shouldBe(visible)
                     .find("td")
                     .shouldHave(text(RSKU))

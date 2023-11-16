@@ -47,7 +47,7 @@ class ChecksPage(subURL: String) : MainPage(subURL) {
         val toggles = elements("tbody tr input")
 
         var index = 0
-        while (index < toggles.size()) { //TODO
+        while (index < toggles.size()) {
             if (toggles[index].attr("checked") == "true") {
                 toggles[index].click()
                 sleep(500)
