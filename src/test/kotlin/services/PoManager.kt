@@ -9,7 +9,7 @@ class PoManager : SettingsService() {
     private val serviceName = "po-manager"
 
     fun deleteProduct(productRSKU: String) {
-        request(serviceName)
+        authRequest(serviceName)
             .delete("api/v1/product-info/$productRSKU")
             .then().log().all()
             .statusCode(200)
@@ -21,7 +21,7 @@ class PoManager : SettingsService() {
             .put("productFullName", nameProduct)
             .toString()
 
-        request(serviceName)
+        authRequest(serviceName)
             .body(json)
             .post("api/v1/product-info")
             .then().log().all()

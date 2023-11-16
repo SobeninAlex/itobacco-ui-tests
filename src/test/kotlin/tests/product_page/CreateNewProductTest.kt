@@ -2,14 +2,17 @@ package tests.product_page
 
 import com.codeborne.selenide.CollectionCondition
 import com.codeborne.selenide.Condition.*
+import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.sleep
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Allure.step
 import io.qameta.allure.Epic
 import io.qameta.allure.Story
 import org.junit.jupiter.api.AfterEach
+import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
+import pages.main_page.AUTHORIZATION_PAGE
 import pages.main_page.PRODUCT_PAGE
 import services.PO_MANAGER
 import support.*
@@ -23,6 +26,21 @@ class CreateNewProductTest : TestBase() {
     @Test
     @DisplayName("Успешное создание новой продукции")
     fun createNewProduct_Success() {
+        with(AUTHORIZATION_PAGE) {
+            step("Переход на страницу авторизации", ThrowableRunnableVoid {
+                openPage()
+            })
+
+            step("Заполнение формы авторизации", ThrowableRunnableVoid {
+                login_field().value = loginOrPassword
+                password_field().value = loginOrPassword
+            })
+
+            step("Клик [Войти]", ThrowableRunnableVoid {
+                enter_button().click()
+            })
+        }
+        Selenide.sleep(1000)
         with(PRODUCT_PAGE) {
             step("Переход на страницу 'Продукция'", ThrowableRunnableVoid {
                 openPage()
@@ -100,6 +118,7 @@ class CreateNewProductTest : TestBase() {
                 listAtr[6].`as`("GTIN блока").shouldHave(text(blockGTIN))
                 listAtr[7].`as`("GTIN короба").shouldHave(text(boxGTIN))
             })
+            sleep(1000)
         }
     }
 

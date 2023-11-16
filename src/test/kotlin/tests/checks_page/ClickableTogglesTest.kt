@@ -9,17 +9,35 @@ import io.qameta.allure.Story
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.openqa.selenium.By
+import pages.main_page.AUTHORIZATION_PAGE
 import pages.main_page.CHECKS_PAGE
 import test_settings.TestBase
+
 
 @Epic("Тесты на страницу 'Проверки производственно продукции'")
 @Story("Функциональные тесты")
 @DisplayName("Кликабельность тогглов")
 class ClickableTogglesTest : TestBase() {
 
+
     @Test
     @DisplayName("Кликабельность тогглов")
     fun checkClickableToggles() {
+        with(AUTHORIZATION_PAGE) {
+            step("Переход на страницу авторизации", ThrowableRunnableVoid {
+                openPage()
+            })
+
+            step("Заполнение формы авторизации", ThrowableRunnableVoid {
+                login_field().value = loginOrPassword
+                password_field().value = loginOrPassword
+            })
+
+            step("Клик [Войти]", ThrowableRunnableVoid {
+                enter_button().click()
+            })
+        }
+        sleep(1000)
         with(CHECKS_PAGE) {
             step("Переход на страницу 'Проверки производственной продукции'", ThrowableRunnableVoid {
                 openPage()

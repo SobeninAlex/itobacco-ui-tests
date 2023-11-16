@@ -7,13 +7,13 @@ import com.codeborne.selenide.logevents.SelenideLogger
 import io.qameta.allure.selenide.AllureSelenide
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
-import support.Namespaces.DEV_03
+import support.Namespaces.DEV_02
 
 abstract class TestBase {
 
     @BeforeEach
     fun setup() {
-        Configuration.baseUrl = DEV_03.url
+        Configuration.baseUrl = DEV_02.url
         Configuration.browser = "chrome"
         Configuration.browserSize = "1920x1080"
         Configuration.browserPosition = "0x0"

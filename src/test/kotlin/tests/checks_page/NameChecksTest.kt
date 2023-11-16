@@ -1,6 +1,7 @@
 package tests.checks_page
 
 import com.codeborne.selenide.Condition
+import com.codeborne.selenide.Selenide
 import com.codeborne.selenide.Selenide.element
 import io.qameta.allure.Allure.ThrowableRunnableVoid
 import io.qameta.allure.Allure.step
@@ -9,6 +10,7 @@ import io.qameta.allure.Story
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
 import org.openqa.selenium.By
+import pages.main_page.AUTHORIZATION_PAGE
 import pages.main_page.CHECKS_PAGE
 import test_settings.TestBase
 
@@ -20,6 +22,21 @@ class NameChecksTest : TestBase() {
     @Test
     @DisplayName("Названия/описания проверок")
     fun nameCheck() {
+        with(AUTHORIZATION_PAGE) {
+            step("Переход на страницу авторизации", ThrowableRunnableVoid {
+                openPage()
+            })
+
+            step("Заполнение формы авторизации", ThrowableRunnableVoid {
+                login_field().value = loginOrPassword
+                password_field().value = loginOrPassword
+            })
+
+            step("Клик [Войти]", ThrowableRunnableVoid {
+                enter_button().click()
+            })
+        }
+        Selenide.sleep(1000)
         CHECKS_PAGE.apply {
             step("Переход на страницу 'Проверки производственной продукции'", ThrowableRunnableVoid {
                 openPage()
