@@ -4,9 +4,9 @@ import org.json.JSONObject
 import support.nameProduct
 import java.io.File
 
-class PoManager : SettingsService() {
+private const val serviceName = "po-manager"
 
-    private val serviceName = "po-manager"
+class PoManager : SettingsService() {
 
     fun deleteProduct(productRSKU: String) {
         request(serviceName)

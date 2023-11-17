@@ -46,7 +46,6 @@ class EditNewProductTest : TestBase() {
         with(PRODUCT_PAGE) {
             step("Переход на страницу 'Продукция'", ThrowableRunnableVoid {
                 openPage()
-                sleep(1000)
                 pageTitle().shouldBe(visible).shouldHave(text(orderPageTitle))
             })
 

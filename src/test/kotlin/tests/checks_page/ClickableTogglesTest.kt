@@ -30,13 +30,13 @@ class ClickableTogglesTest : TestBase() {
                  */
                 element(By.xpath("//td[text()='Проверка времени между нанесением и эмиссией КМ']"))
                     .shouldBe(Condition.visible)
+                    .shouldHave(Condition.text("Проверка времени между нанесением и эмиссией КМ"))
             })
 
             step("Клик по каждому тогглу -> проверка: тоггл действительно выключился/включился", ThrowableRunnableVoid {
                 checkToggles()
             })
         }
-
     }
 
 }
